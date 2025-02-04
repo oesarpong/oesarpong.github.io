@@ -87,11 +87,10 @@
                         <div class="tab-pane fade show active" id="a-tab-pane" role="tabpanel" aria-labelledby="a-tab" tabindex="0">
                             <h3 class="fw-bolder text-dark mt-3">Lab 1A - Artemis</h3>
                             <hr style="margin-top: 0;">
-                            <p class="fw-light">In this section I set up the Artemis Board using Arduino IDE and gaining a comfortability in programming my board for relevant applications in further projects.</p>
-                            
+                            <p class="fw-light">In this section, I set up the Artemis Board using the Arduino IDE and gained comfort in programming my board for relevant applications in future projects.</p>
                             <h4 class="fw-bold text-dark mt-3">Prelab</h4>
                             <hr style="margin-top: 0;">
-                            <p class="fw-light">Installed Arduino IDE, verifying the latest versions of Sparkfun Apollo 3 Board Manager. Connected my Artemis Board and installed relevant libraries</p>
+                            <p class="fw-light">I installed the Arduino IDE, verified the latest version of the SparkFun Apollo 3 Board Manager, connected my Artemis Board, and installed the relevant libraries.</p>
                             <div class="d-flex justify-content-center">
                                 <img class="align-self-center w-25 mb-1" src="assets/lab 1/Screenshot 2025-02-01 at 9.32.18 PM.png" alt="...">
                             </div>
@@ -128,23 +127,10 @@
                         <div class="tab-pane fade" id="b-tab-pane" role="tabpanel" aria-labelledby="b-tab" tabindex="0">
                             <h3 class="fw-bolder text-dark mt-3">Lab 1B - Bluetooth</h3> <hr style="margin-top: 0;">
                             <p class="fw-light">
-                                Next I established a conncetion via bluetooth between my computer and the Atremis board using two different softwares (i.e. Python, Arduino Progrmaming Language). 
-                                Developed a framework of commands intend to simpify the sending and receiving of data which will be of aid in future labs. 
-                            </p>
+                                Next, I established a connection via Bluetooth between my computer and the Artemis board using two different software platforms (i.e., Python and Arduino Programming Language). I developed a framework of commands intended to simplify the sending and receiving of data, which will be helpful in future labs.                            </p>
                             <h4 class="fw-bolder text-dark mt-3">Prelab</h4> <hr style="margin-top: 0;">
                             <p class="fw-light">
-                                Setup my computer to run Jupyter Notebook (using Python) through a Virtual Environment to isolate any libraries, interpreters, and scripts. Install several packages including
-                                the project directory containing a skeleton of code setting the foundation for communication between the bluetooth stack and my computer. 
-                            </p>
-                            <!-- <p class="d-inline-flex gap-1 justify-content-center">
-                                <a class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">See Details</a>
-                            </p> -->
-                            <div class="collapse" id="collapseExample">
-                                <div class="card card-body mx-4">
-                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-        
+                                I set up my computer to run Jupyter Notebook (using Python) through a virtual environment to isolate any libraries, interpreters, and scripts. I installed several packages, including the project directory containing a skeleton of code that sets the foundation for communication between the Bluetooth stack and my computer.                            </p>
                             <h4 class="fw-bolder text-dark mt-3">Lab Tasks: Commands</h4> <hr style="margin-top: 0;">
                             <p class="fw-light text-dark">
                                 The following are a series of tasks that tests the robots sensor ore effectively through a wireless connection. These tests
@@ -154,16 +140,12 @@
                                 <!-- Tasks 0 -->
                                 <h4 class="fs-bold mt-5">0. Configurations</h4>
                                 <p class="fw-light text-dark text-start mb-3">
-                                    Before starting the tasts, I first updated the configuration file to connect my unique Artemis Board to my personal laptop. Additionally, verfied that the UUIDs between 
-                                    Python and Arduino IDE matched.
-                                </p>
+                                    Before starting the tasks, I first updated the configuration file to connect my unique Artemis Board to my personal laptop. Additionally, I verified that the UUIDs between Python and Arduino IDE matched.                                </p>
                                 <script src="https://gist.github.com/oesarpong/e51e0be9ebe55e7f349291d7ad11bf35.js"></script> 
                                 <!-- Tasks 2 -->
                                 <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic text-capitalize">echo</span> Command</h4>
                                 <p class="fw-light text-black text-start mb-3">
-                                    The first task was to send the board a message and have it send back the recieved message to the computer, hence an <span class="fw-bold">"Echo."</span> To begin, I first 
-                                    set up the command algorithim in the IDE Software. 
-                                </p>
+                                    The first task was to send the board a message and have it send back the received message to the computer, hence an <span class="fw-bold">"Echo."</span> To begin, I first set up the command algorithm in the IDE software.                                </p>
                                 <script class="my-3" src="https://gist.github.com/oesarpong/4f99a889733108ddc6ddea507f58c03a.js"></script>
                                 <p class="fw-light text-black text-start my-3 mt-4">
                                     Next from my laptop, I would intiate the command and expect to recieve <span class="fw-bold"> VALID!</span>
@@ -174,8 +156,7 @@
 
                                 <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Send Three Floats</span> Command</h4>
                                 <p class="fw-light text-black text-start my-3 mb-3">
-                                    The next task was to send a single message containing 3 floats seperated by a delimiter. The Arduino program stores the 3 floats and prints them to the Serial Monitor.
-                                </p>
+                                    The next task was to send a single message containing three floats separated by a delimiter. The Arduino program stores the three floats and prints them to the Serial Monitor.                                </p>
                                 <script class="my-3" src="https://gist.github.com/oesarpong/90c0d7a0de92e81f458b1a4e12dd8495.js"></script>
                                 <div class="d-flex justify-content-center mt-5">
                                     <img class="img-fluid align-self-center border-dark" src="assets/lab 1/floats.png" alt="...">
@@ -197,18 +178,12 @@
 
                                 <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Notifcation Handler</span></h4>
                                 <p class="fw-light text-black text-start my-3 mb-3">
-                                    This notification handler updates the global variables <span class="fw-medium fst-italic">dataTime</span> and <span class="fw-medium fst-italic">dataTemp</span>
-                                    as the string characteristic is changed. In addiiton, a helper function below was created to help track the transfer rate
-                                    for a given time array.
-                                </p>
+                                    This notification handler updates the global variables <span class="fw-medium fst-italic">dataTime</span> and <span class="fw-medium fst-italic">dataTemp</span> as the string characteristic is changed. In addition, a helper function below was created to help track the transfer rate for a given time array.                                </p>
                                 <script src="https://gist.github.com/oesarpong/36350c18a37c05bb507895d7dc03aa01.js"></script>
 
                                 <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Handler Validation</span></h4>
                                 <p class="fw-light text-black text-start my-3">
-                                    Next, I setup a loop to validate the functions from previous task. The command  
-                                    <span class="fw-light fst-italic">GET_TIME_MILLIS</span> will be looped to collect an array of timestamps. My laptop will recieve 
-                                    and process these timestamps each time the handler is notified of a change.
-                                </p>
+                                    Next, I set up a loop to validate the functions from the previous task. The command <span class="fw-light fst-italic">GET_TIME_MILLIS</span> will be looped to collect an array of timestamps. My laptop will receive and process these timestamps each time the handler is notified of a change.                                </p>
                                 <div class="d-flex justify-content-center mt-2">
                                     <img class="img-fluid align-self-center border-dark" src="assets/lab 1/notihandler.png" alt="...">
                                 </div>
@@ -220,73 +195,61 @@
                                 
                                 <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Send Time Data</span> Command </h4>
                                 <p class="fw-light text-black text-start my-3">
-                                    In this task, I intialized two data arrays that hold the most recent data points for both time and temperature. This arrays are continously
-                                    updated within the main loop on the Artemis Board. When called the <span class="fw-light fst-italic">Send_Time_Data</span> command sends the current
-                                    state of the data array recording the timestamps. 
-                                </p>
+                                    The effective transfer rate using this method is <span class="fw-medium fst-italic">t = 59.0 ms.</span> Notably, this is dependent on my laptop's ability to receive and process the updates received by the handler. Additionally, there is a large inconsistency in the time difference between each timestamp.                                </p>
                                 <script src="https://gist.github.com/oesarpong/73525ef66fc6fbbb7996a4e64250d924.js"></script>
                                 <div class="d-flex justify-content-center mt-2">
                                     <img class="img-fluid align-self-center border-dark" src="assets/lab 1/notihandler.png" alt="...">
                                 </div>
                                 <p class="fw-light text-black text-start my-4">
-                                    This array is then received by my laptop and stored within it's own <span class="fw-light fst-italic">dataTime</span> array (refer to Notification Handler).
-                                    The effective transfer rate using this method is <span class="fw-medium fst-italic">t= 25.0 ms.</span> It is important to note that this transfer rate 
-                                    corresponds to the delay within the main loop of the Arduino IDE.
-                                </p>
+                                    This array is then received by my laptop and stored within its own <span class="fw-light fst-italic">dataTime</span> array (refer to Notification Handler). The effective transfer rate using this method is <span class="fw-medium fst-italic">t = 25.0 ms.</span> It is important to note that this transfer rate corresponds to the delay within the main loop of the Arduino IDE.                                </p>
 
                                 <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Get Time Readings</span> Command </h4>
                                 <p class="fw-light text-black text-start my-3">
-                                    Expanding on the previous task, this command, when called, sends the current states of both the data arrays for time and temperature. Both of these arrays are continously being updated to display the latest data points. The data is recieved 
-                                    by my laptop which stores the new string characteristic and processes it accordingly for time and temperature (see Notification Handler).
-                                </p>
+                                    Expanding on the previous task, this command, when called, sends the current states of both the data arrays for time and temperature. Both of these arrays are continuously being updated to display the latest data points. The data is received by my laptop, which stores the new string characteristic and processes it accordingly for time and temperature (see Notification Handler).                                </p>
                                 <script src="https://gist.github.com/oesarpong/77169d33b29351624b711fa090673934.js"></script>
                                 <div class="d-flex justify-content-center mt-2">
                                     <img class="img-fluid align-self-center border-dark" src="assets/lab 1/get_time_readings.png" alt="...">
                                 </div>
                                 <p class="fw-light text-black text-start my-4">
-                                    The effective transfer rate using this method is also <span class="fw-medium fst-italic">t= 25.0 ms.</span> The temperature readings are reported in
-                                    degrees fahrenheit.
-                                </p>
+                                    The effective transfer rate using this method is also <span class="fw-medium fst-italic">t = 25.0 ms.</span> The temperature readings are reported in degrees Fahrenheit.                                </p>
 
                                 <h4 class="list-group-item fs-bold mt-5"> Remarks </h4>
                                 <p class="fw-light text-black text-start my-3">
-                                    To my surprise these two methods present two different transfer rates. Collecting data in the Ardunio IDE program
-                                    creates consistent internvals which can be internally set by the user. Therefore the "quickness" of the data collect is determined the delay. Converserly, collecting the data individually with the 
-                                    notification handler is dependent on the speed of your computer. 
-                                </p>
+                                    To my surprise, these two methods present different transfer rates. Collecting data in the Arduino IDE program creates consistent intervals, which can be internally set by the user. Therefore, the "quickness" of the data collection is determined by the delay. Conversely, collecting the data individually with the notification handler is dependent on the speed of your computer.                                </p>
                                 <p class="fw-light text-black text-start mb-3">
-                                    I believe that both present advantages and disadvantages. If the user is looking for consistent data intervals then the second method 
-                                    is favorable. However, as these labs continue it is likely that multiple commands will be found 
-                                    in the Artmeis' main loop which could accumulate a large delay. Using the notification handler will interrupt the script 
-                                    potentially saving the user time in the end. 
-                                </p>
+                                    I believe that both methods present advantages and disadvantages. If the user is looking for consistent data intervals, then the second method is favorable. 
+                                    However, as these labs continue, it is likely that multiple commands will be found in the Artemis' main loop, which could accumulate a large delay. 
+                                    Using the notification handler will interrupt the script,
+                                     potentially saving the user time in the end.</p>
                                 <p class="fw-light text-black text-start mb-3">
-                                    Hypotheically if the Artemis has 384 kB of RAM then we can store approximately 96,000 data points at 4 bytes per. (this is excluding the memory required for the script and variables)
+                                    Hypotheically if the Artemis has 384 kB of RAM then we can store approximately 96,000 data points at 4 bytes per (this is excluding the memory required for the script and variables).
                                 </p>
 
     
                             </ul>
                         </div>
                     </div>
-                    <h3 class="fw-bolder text-dark mt-3">Discussion</h3>
+                    
+                    <h3 class="fw-bolder text-dark mt-3">Discussion</h3><hr style="margin-top: 0;">
       
                     <p class="fw-light text-black text-start mb-3">
-                        Within this lab assignment, I learned how to setup an Artemis Board and factilitate Bluetooth Connection to communicate with my laptop.
-                        In preparation for future labs, I beleive the implementation behind recieving and sending commands will be very useful. The biggest challenge during this lab was 
-                        dicphering the skeleton code and interpreting some of the already given scripts. In addition, I spent a significant deal of time searching up documentation to better
-                        program in both C and html.
-                    </p>
+                        Within this lab assignment, I learned how to set up an Artemis Board and facilitate Bluetooth connection to communicate with my laptop. In preparation for future labs, I believe the implementation behind receiving and sending commands will be very useful. The biggest challenge during this lab was deciphering the skeleton code and interpreting some of the already given scripts. In addition, I spent a significant amount of time searching for documentation to better program in both C and HTML.                    </p>
+                    <h3 class="fw-bolder text-dark mt-3">Resources</h3><hr style="margin-top: 0;">
+                    <div class="fw-light">
+                        <p>
+                            <span class="fw-medium fst-italic">ChatGPT:</span> Served as valuable resource for programming in C and html. This AI did not serve to be useful for developing logic and algorithim.
+                            Rather it was used for finding function documentation and aquiring knowledge for unknown built-in functions. This was useful when reviewing the given lab code and understanding the algorithims. 
+                        </p>
+                        <p>
+                            <span class="fw-medium fst-italic">Wenyi Wu Webpage:</span> Used as an example for creating the structure for my writeup. Served as a good reference for the quantitiy of snippets/images, length of commentary, and section titles. 
+                        </p>
+                        <p><span class="fw-medium fst-italic">Nila Narayan Webpage:</span> Referred frequently to this webpage while creating my website layout and structure. Also provided an additional approach for the lab writeup.</p>
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>  
-
-        <!-- Footer-->
-    <!-- <footer class="bg-dark">
-        <p class="text-end text-light"><small class="fw-medium">&copy; 2025 Ethan Sarpong. MAE 4190: Fast Robots</small> 
-        </p>
-    </footer> -->
 
     <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
