@@ -16,9 +16,9 @@
     <!-- Responsive Navbar-->
     <nav class="navbar navbar-expand-lg px-3 bg-dark sticky-top" style=" z-index: 1000; width:100%; height: 3rem;">
         <a class="navbar-brand text-white"> <p class="h4"> <span class="fw-bold "style = "color:tomato;"> MAE 4190 </span> Fast Robots</p> </a>
-        <!-- <a class="navbar-brand align-items-center pb-3" href="#">
-            <img src="assets/lab 1/icon.svg" alt="Bootstrap" width="25" height="25">
-          </a>     -->
+        <a class="nav-item align-items-center fw-medium py-1 mb-1 text-end text-white" href="#code">
+            Go to Code
+          </a>    
     </nav>
     <!-- Main Grid Layout -->
     <div class="container-xs px-3 my-3 ">
@@ -63,206 +63,300 @@
                     </div>
                     </a>
                 </div>
-            </div>            <!-- Main Column -- Page Content -->
-            <div class=" col-md-8 bg-white overflow-y-scroll" style="height: 100vh;">
-                <div class="d-flex flex-column ms-3" id="lab1">
-                        <h1 class="text-capitalize fw-bolder p-3">
+            </div>            
+            <!-- Main Column -- Page Content -->
+            <div class="col-12 col-md-9 bg-white overflow-y-scroll px-1" style="height: 100vh;">
+                <div class="d-flex flex-column ms-2"">
+                        <h1 class="text-capitalize fw-bolder">
                             <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);"> Lab 2 - IMU</span>
                         </h1>
-                        Page will be populated soon ...
-                
-                        <!-- <ul class="nav nav-tabs fw-bolder fs-5" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="a-tab" data-bs-toggle="tab" data-bs-target="#a-tab-pane" type="button" role="tab" aria-controls="a-tab-pane" aria-selected="true" style="color: black;">Part A</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="b-tab" data-bs-toggle="tab" data-bs-target="#b-tab-pane" type="button" role="tab" aria-controls="b-tab-pane" aria-selected="false "style="color: #FF6347;">Part B</button>
-                            </li>
-                        </ul> -->
-                
-                    <!-- Tab Content -->
-                    <!-- <div class="tab-content" id="myTabContent"> -->
-                        <!-- Tab Pane A -->
-                        <!-- <div class="tab-pane fade show active" id="a-tab-pane" role="tabpanel" aria-labelledby="a-tab" tabindex="0">
-                            <h3 class="fw-bolder text-dark mt-3">Lab 1A - Artemis</h3>
-                            <hr style="margin-top: 0;">
-                            <p class="fw-light">In this section I set up the Artemis Board using Arduino IDE and gaining a comfortability in programming my board for relevant applications in further projects.</p>
-                            
-                            <h4 class="fw-bold text-dark mt-3">Prelab</h4>
-                            <hr style="margin-top: 0;">
-                            <p class="fw-light">Installed Arduino IDE, verifying the latest versions of Sparkfun Apollo 3 Board Manager. Connected my Artemis Board and installed relevant libraries</p>
-                            <div class="d-flex justify-content-center">
-                                <img class="align-self-center w-25 mb-1" src="assets/lab 1/Screenshot 2025-02-01 at 9.32.18 PM.png" alt="...">
-                            </div>
-                            <h4 class="fw-bold text-dark mt-5">Lab Tasks</h4>
-                            <hr style="margin-top: 0;">
-                            <div class="ms-5">
-                                <h5 class="fw-medium text-dark my-3">Task 1 - Blink</h5>
-                                <div class="d-flex justify-content-center">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sjwc3xi8-FY?si=oA46gyf7veGvHtNf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                                <p class="fw-light text-light-emphasis fst-italic text-center my-3 mb-2"> LED is set to blink every 0.5 seconds </p>
-                                 <hr>         
-                                <h5 class="fw-medium text-dark my-3">Task 2 - Serial Monitor</h5>
-                                <div class="d-flex justify-content-center">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TdoYoBxt3mo?si=Sm0G2jQxpfFIMtOK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                            </div>
-                                <p class="fw-light text-light-emphasis fst-italic text-center my-3 mb-2"> Serial Monitor echos back messages received by the board </p>
-                                <hr>
-                                <h5 class="fw-medium text-dark my-3">Task 3 - Temperature Sensor</h5>
-                                <div class="d-flex justify-content-center">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nBpIn_KPOmI?si=dDuCFsl4Ucnw6-rL&amp;start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                            </div>
-                                <p class="fw-light fst-italic mx-5 text-light-emphasis text-center my-3 mb-2"> 
-                                    Temperature Sensor is located within the Microcontroller. Behind the audience's view, hot air is blown onto the board while monitoring
-                                    the analog readout <span class="fw-bold">Temperature Range: 89-83 deg F</span> 
-                                </p>
-                                <hr>
-                                <h5 class="fw-medium text-dark my-3 ">Task 4 - Microphone Output</h5>
-                                <div class="d-flex justify-content-center">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZAvixesONWY?si=50NW5HoADsIe4gFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                            </div>
-                                <p class="fw-light text-light-emphasis fst-italic text-center my-3"> Board's microphone is tested by playing different piano notes and reviewing the output </p>            
-                            </div>
-                        </div> -->
-                
-                        <!-- Tab Pane B -->
-                        <!-- <div class="tab-pane fade" id="b-tab-pane" role="tabpanel" aria-labelledby="b-tab" tabindex="0">
-                            <h3 class="fw-bolder text-dark mt-3">Lab 1B - Bluetooth</h3> <hr style="margin-top: 0;">
-                            <p class="fw-light">
-                                Next I established a conncetion via bluetooth between my computer and the Atremis board using two different softwares (i.e. Python, Arduino Progrmaming Language). 
-                                Developed a framework of commands intend to simpify the sending and receiving of data which will be of aid in future labs. 
-                            </p>
-                            <h4 class="fw-bolder text-dark mt-3">Prelab</h4> <hr style="margin-top: 0;">
-                            <p class="fw-light">
-                                Setup my computer to run Jupyter Notebook (using Python) through a Virtual Environment to isolate any libraries, interpreters, and scripts. Install several packages including
-                                the project directory containing a skeleton of code setting the foundation for communication between the bluetooth stack and my computer. 
-                            </p> -->
-                            <!-- <p class="d-inline-flex gap-1 justify-content-center">
-                                <a class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">See Details</a>
-                            </p> -->
-                            <!-- <div class="collapse" id="collapseExample">
-                                <div class="card card-body mx-4">
-                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                </div>
-                            </div>
-        
-                            <h4 class="fw-bolder text-dark mt-3">Lab Tasks: Commands</h4> <hr style="margin-top: 0;">
-                            <p class="fw-light text-dark">
-                                The following are a series of tasks that tests the robots sensor ore effectively through a wireless connection. These tests
-                                initiate a command that will begin series of communication between the board and my laptop.
-                            </p>
-                            <ul class="list-group-numbered text-black"> -->
-                                <!-- Tasks 0 -->
-                                <!-- <h4 class="fs-bold mt-5">0. Configurations</h4>
-                                <p class="fw-light text-dark text-start mb-3">
-                                    Before starting the tasts, I first updated the configuration file to connect my unique Artemis Board to my personal laptop. Additionally, verfied that the UUIDs between 
-                                    Python and Arduino IDE matched.
-                                </p>
-                                <script src="https://gist.github.com/oesarpong/e51e0be9ebe55e7f349291d7ad11bf35.js"></script>  -->
-                                <!-- Tasks 2 -->
-                                <!-- <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic text-capitalize">echo</span> Command</h4>
-                                <p class="fw-light text-black text-start mb-3">
-                                    The first task was to send the board a message and have it send back the recieved message to the computer, hence an <span class="fw-bold">"Echo."</span> To begin, I first 
-                                    set up the command algorithim in the IDE Software. 
-                                </p>
-                                <script class="my-3" src="https://gist.github.com/oesarpong/4f99a889733108ddc6ddea507f58c03a.js"></script>
-                                <p class="fw-light text-black text-start my-3 mt-4">
-                                    Next from my laptop, I would intiate the command and expect to recieve <span class="fw-bold"> VALID!</span>
-                                </p>
-                                <div class="d-flex justify-content-center">
-                                    <img class="img-fluid align-self-center border-dark" src="assets/lab 1/echo.png" alt="...">
-                                </div>
+                        <h2 class="fw-bolder text-dark mt-3">Introduction</h2> <hr style="margin-top: 0;">
+                        <p class="fw-light">
+                            The purpose of this lab was to begin working and implementing an IMU into my Robot. This covers Accelerometer and Gyroscope data
+                            processing and filtering. In addition, I got my RC Robot and recorded a Stunt! 
+                        </p>
 
-                                <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Send Three Floats</span> Command</h4>
-                                <p class="fw-light text-black text-start my-3 mb-3">
-                                    The next task was to send a single message containing 3 floats seperated by a delimiter. The Arduino program stores the 3 floats and prints them to the Serial Monitor.
-                                </p>
-                                <script class="my-3" src="https://gist.github.com/oesarpong/90c0d7a0de92e81f458b1a4e12dd8495.js"></script>
-                                <div class="d-flex justify-content-center mt-5">
-                                    <img class="img-fluid align-self-center border-dark" src="assets/lab 1/floats.png" alt="...">
-                                </div>
-                                <p class="fw-light text-black text-center my-3 mb-2 fst-italic" > Python Command </p>
-                                <div class="d-flex justify-content-center mt-5">
-                                    <img class="img-fluid w-75 align-self-center border-dark" src="assets/lab 1/3floatsTwo.png" alt="...">
-                                </div>
-                                <p class="fw-light text-black text-center my-3 mb-2 fst-italic"> Arduino Serial Monitor </p>
 
-                                <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Get Time Millis</span> Command</h4>
-                                <p class="fw-light text-black text-start my-3 mb-3">
-                                    In this task, the robot replies with a timestamp in the form of <span class="fw-medium">"T:12345"</span>
-                                </p>
-                                <script class="my-3 " src="https://gist.github.com/oesarpong/4b24f65f1dc64326f3d0ba09d84bddd8.js"></script>  
-                                <div class="d-flex justify-content-center mt-5">
-                                    <img class="img-fluid align-self-center border-dark" src="assets/lab 1/timeImage.png" alt="...">
-                                </div>
-
-                                <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Notifcation Handler</span></h4>
-                                <p class="fw-light text-black text-start my-3 mb-3">
-                                    This notification handler updates the global variables <span class="fw-medium fst-italic">dataTime</span> and <span class="fw-medium fst-italic">dataTemp</span>
-                                    as the string characteristic is changed. In addiiton, a helper function below was created to help track the transfer rate
-                                    for a given time array.
-                                </p>
-                                <script src="https://gist.github.com/oesarpong/36350c18a37c05bb507895d7dc03aa01.js"></script>
-
-                                <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Handler Validation</span></h4>
-                                <p class="fw-light text-black text-start my-3">
-                                    Next, I setup a loop to validate the functions from previous task. The command  
-                                    <span class="fw-light fst-italic">GET_TIME_MILLIS</span> will be looped to collect an array of timestamps. My laptop will recieve 
-                                    and process these timestamps each time the handler is notified of a change.
-                                </p>
-                                <div class="d-flex justify-content-center mt-2">
-                                    <img class="img-fluid align-self-center border-dark" src="assets/lab 1/notihandler.png" alt="...">
-                                </div>
-                                <p class="fw-light text-black text-start my-3 mb-2">
-                                    The effective transfer rate using this method is <span class="fw-medium fst-italic">t= 59.0 ms.</span> 
-                                    Notably, this is dependent on my laptops ability to recieve and process the updates received by the handler. Additionally, there 
-                                    is a large inconsistency in time difference between each timestamp.
-                                </p>
-                                
-                                <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Send Time Data</span> Command </h4>
-                                <p class="fw-light text-black text-start my-3">
-                                    In this task, I intialized two data arrays that hold the most recent data points for both time and temperature. This arrays are continously
-                                    updated within the main loop on the Artemis Board. When called the <span class="fw-light fst-italic">Send_Time_Data</span> command sends the current
-                                    state of the data array recording the timestamps. 
-                                </p>
-                                <script src="https://gist.github.com/oesarpong/73525ef66fc6fbbb7996a4e64250d924.js"></script>
-                                <div class="d-flex justify-content-center mt-2">
-                                    <img class="img-fluid align-self-center border-dark" src="assets/lab 1/notihandler.png" alt="...">
-                                </div>
-                                <p class="fw-light text-black text-start my-4">
-                                    This array is then received by my laptop and stored within it's own <span class="fw-light fst-italic">dataTime</span> array (refer to Notification Handler).
-                                    The effective transfer rate using this method is <span class="fw-medium fst-italic">t= 25.0 ms.</span> It is important to note that this transfer rate 
-                                    corresponds to the delay within the main loop of the Arduino IDE.
-                                </p>
-
-                                <h4 class="list-group-item fs-bold mt-5"> <span class="fst-italic">Get Time Readings</span> Command </h4>
-                                <p class="fw-light text-black text-start my-3">
-                                    Expanding on the previous task, this command, when called, sends the current states of both the data arrays for time and temperature. Both of these arrays are continously being updated to display the latest data points. The data is recieved 
-                                    by my laptop which stores the new string characteristic and processes it accordingly for time and temperature (see Notification Handler).
-                                </p>
-                                <script src="https://gist.github.com/oesarpong/77169d33b29351624b711fa090673934.js"></script>
-                                <div class="d-flex justify-content-center mt-2">
-                                    <img class="img-fluid align-self-center border-dark" src="assets/lab 1/get_time_readings.png" alt="...">
-                                </div>
-                                <p class="fw-light text-black text-start my-4">
-                                    The effective transfer rate using this method is also <span class="fw-medium fst-italic">t= 25.0 ms.</span> The temperature readings are reported in
-                                    degrees fahrenheit.
-                                </p>
-
-    
-                            </ul>
+                        <h2 class="fw-bolder text-dark mt-3">Setting Up the IMU</h2> <hr style="margin-top: 0;">
+                        <h4 class="fw-bolder text-dark mt-3">1. Connection</h4> 
+                        <p class="fw-light">To begin, I connected my IMU to my Artemis board with the use of QWIIC connectors.</p>
+                        <div class="d-flex justify-content-center">
+                            <img width="500" height="300" class="align-self-center mb-1" src="assets/lab2/IMG_4800 2.jpg" alt="...">
                         </div>
-                    </div>
-                    <h3 class="fw-bolder text-dark mt-3">Discussion</h3>
+                        <h4 class="fw-bolder text-dark mt-3">2. Example Code</h4> 
+                        <p class="fw-light">Next I reviewed <span class="fst-italic"> Example1_Basics</span> to better understand the functions of the registers and sensors within the board.</p>
+                        <div class="d-flex justify-content-center mb-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/CQPwA7-JoSM?si=j_qD5bUXxjGyz2Pr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
+                        </div> <hr style="margin-top: 0;">                  
+                        <p class="fw-light">Both the Gyroscope and Accelerometer were working fine. Both of these components record rates of change responding only to changes in motion before zeroing out. 
+                            These initial outputs are useful but not immediately relevant for out purposes, hence requiring additional post processing.
+                        </p>
+                        <h4 class="fw-bolder text-dark mt-3 ms-3"> <small class="">2A. AD0_VAL Definition</small></h4> 
+                        <p class="fw-light ms-3">AD0 is a Analog-Data-Converter used as a data input pin. This value can be set to either 0 or 1 which will interface with either
+                            I2C or SPI depending on which address and data rate the user prefers. Setting the value to 0 indicates the default address and 1 would be used for an alternative. 
+                        </p>
 
-                </div>
-            </div>
-        </div>
-    </div>   -->
+                        <h2 class="fw-bolder text-dark mt-3" id="code">Programming Modifications </h2> <hr style="margin-top: 0;">
+                        <p class="fw-light">A significant amount of code was developed in order to accomdate the IMU sensor. Below is a summary of the functions and algorithims that will be referenced throughout this lab report. 
+                            The scope of this code highlights both Arduino and Python Functions that were used to record, process, send, and receive data between the Artemis Nano and my laptop. Any functions or commands referenced will take the form: 
+                            <span class="fw-bold fst-italic">COMMAND_FORMATTING</span>. The majorityy of this report will focus more on the results with minimal code snippets where it's appropriate.
+                        </p>
+                        <h5 class="fw-bolder text-center my-3">
+                            <a href="https://gist.github.com/oesarpong/10031ba4bfa6c5a823dd762064cf44bd" class="link">
+                                Arduino IDE Code
+                            </a>
+                        </h4>
+                        <div class="px-5 mx-5" style="max-height: 40vh; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/10031ba4bfa6c5a823dd762064cf44bd.js"></script>
+                        </div>
+                        <h4 class="fw-bolder text-center my-3">
+                            <a class="link" href="https://gist.github.com/oesarpong/57d078c9781f45dedbb57ca6e1ba6557#file-imucommands-h">
+                            ImuCommands.h
+                            </a>
+                        </h4>
+                        <div class="px-5 mx-5" style="max-height: 30vh; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/57d078c9781f45dedbb57ca6e1ba6557.js"></script>
+                        </div>
+                        <h5 class="fw-bolder text-center my-3">
+                            <a href="https://gist.github.com/oesarpong/10031ba4bfa6c5a823dd762064cf44bd" class="link">
+                                Python Code
+                            </a>
+                        </h4>
+                        <div class="px-5 mx-5" style="max-height: 40vh; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/916136ed5ec8e8b9a17e30d8fc6bfec9.js"></script>
+                        </div>
 
-        <!-- Footer-->
-    <!-- <footer class="bg-dark">
-        <p class="text-end text-light"><small class="fw-medium">&copy; 2025 Ethan Sarpong. MAE 4190: Fast Robots</small> 
-        </p>
-    </footer> -->
+                        <h2 class="fw-bolder text-dark mt-5">Accelerometer</h2> <hr style="margin-top: 0;">
+                        <p class="fw-light my-3">In this section, I will be isolating the Accelerometer and processing the output data recieved from the component. The steps for deriving quality
+                            and efficient data will cover equations, filtering, and discuss the accuracy of its readouts. 
+                        </p>
+                        <h4 class="fw-bolder text-dark mt-3">1. Deriving Pitch and Roll</h4> 
+                        <p class="fw-light mb-3">
+                            The accelerometer is a useful component because we can use its readouts to infer the positon and orientation of my RC robot. For now, we were instructed to use the data from the accelerometer
+                            to derive <span class="fw-medium">equations for pitch and roll</span>. Below is a set of governing equations, as well as the code, which I will use to define these variables. Notably, the atan2 function was used
+                            to express these angles between a range of -180 to 180 degrees.
+                        </p>
+                        <div class="d-flex justify-content-center my-3">
+                            <img height= "100" width="200" class="align-self-center " src="assets/lab2/angles.png" alt="...">
+                        </div>
+                        <script src="https://gist.github.com/oesarpong/d26b41f140295b4a60ae9d76281e9908.js"></script>
+                        <hr style="margin-top: 0;">
+                        <p class="fw-light fst-italic text-center mb-3">Note: May have to zoom to see readings. My sincere apologies.</p>
+                        <div class="d-flex justify-content-center">
+                            <img width="400" height="250" class="align-self-center" src="assets/lab2/IMG_4804.jpg" alt="...">
+                        </div>
+                        <p class="fw-light fst-italic text-center my-3">Pitch/Roll 0 Degrees</p>
+                        <div class="d-flex justify-content-center">
+                            <div class="row">
+                                <div class="col-12 col-md-6 ">
+                                    <img width="400" height="250" class="align-self-center  mb-1" src="assets/lab2/IMG_4805.jpg" alt="...">
+                                    <div><p class="fw-light fst-italic text-center my-3">Pitch -90 Degrees</p></div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <img width="400" height="250" class="align-self-center  mb-1" src="assets/lab2/IMG_4806.jpg" alt="...">
+                                    <p class="fw-light fst-italic text-center my-3">Pitch +90 Degrees</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="row">
+                                <div class="col-12 col-md-6 ">
+                                    <img width="400" height="250" class="align-self-center  mb-1" src="assets/lab2/IMG_4808.jpg" alt="...">
+                                    <div><p class="fw-light fst-italic text-center my-3">Roll -90 Degrees</p></div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <img width="400" height="250" class="align-self-center  mb-1" src="assets/lab2/IMG_4809.jpg" alt="...">
+                                    <p class="fw-light fst-italic text-center my-3">Roll +90 Degrees</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="margin-top: 0;">
+                        <p class="fw-light my-3">
+                            Once implemented, I tested out the accelerometer's performance at {-90 0 90} degrees. I adapted my phone case for better implementation of the IMU which aided in eliminating the unsteadiness of my hands reducing the added noise.
+                            From these tests, I confirmed that the component was generally working as expected. <span class="fw-medium">Conversely, I observed that the readout at the boundaries of -90 and 90 degrees were slightly off, and that the sensor was experiencing a significant amount of noise.</span>
+                        </p>
+
+                        <h4 class="fw-bolder text-dark mt-3">2. Calibrating Error </h4> 
+                        <p class="fw-light">
+                            To overcome some of the error in the sensor, I implemented a <span class="fst-italic">Two Point Calibartion</span>. (See Below)
+                        </p>
+                        <div class="d-flex justify-content-center mb-5">
+                            <img src="assets/lab2/Calibration.png" alt="" class="align-self-center w-50">
+                        </div>
+                        <script src="https://gist.github.com/oesarpong/419fc7024c7bdd7294f0c621ec989bb7.js"></script>
+                        <h4 class="fw-bolder text-dark mt-3">3. Noise Filtering, FFT</h4> 
+                        <p class="fw-light">
+                            Next, I analayzed the data in Python to tune a simple low pass filter, which would eliminate noise due to vibrations or bumps. 
+                        </p>
+                        <p class="fw-light mt-1 mb-3">
+                           Before processing this data through Python, I first adapted my Arduino Code to log the accelerometer data to a callable array. From there I implemented 
+                           a command called <span class="fw-bold fst-italic">GET_ACC_DATA</span> which loops through the array and sends the data to my laptop. After receiving the 
+                           data I computed the FFT and reviewed the results (<span class="fw-medium fst-italic">See Python Code</span>).
+                        </p>
+                        <div class="row">
+                            <div class="col-12 col-md-6 ">
+                                <div class="d-flex justify-content-center">
+                                    <img class="align-self-center w-75 mb-1" src="assets/lab2/RawNoise_0deg.png" alt="...">
+                                </div>
+                                <div><p class="fw-light fst-italic text-center my-3">Raw Sensor Data w/ Noise </p></div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="d-flex justify-content-center">
+                                    <img class="align-self-center w-75 mb-1" src="assets/lab2/NoisySpectrum_0deg.png" alt="...">
+                                </div>
+                                <p class="fw-light fst-italic text-center my-3">Sensor Data Spectrum w/Noise</p>
+                            </div>
+                        </div>
+                        <p class="fw-light">
+                            From here, I used the formulas from class to implement to choose a cutoff frequency which would be used to derive a weight, alpha, for our low pass filter. 
+                        </p>
+                        <div class="d-flex justify-content-center my-2">
+                            <img class="align-self-center" src="assets/lab2/alpha.png" alt="...">
+                        </div>
+                        <div><p class="fw-light fst-italic text-center">Choosing Alpha</p></div>
+                        <div class="d-flex justify-content-center my-2">
+                            <img class="align-self-center" src="assets/lab2/lowpass.png" alt="...">
+                        </div>
+                        <div><p class="fw-light fst-italic text-center">Low Pass Filter</p></div>
+                        <p class="fw-light">
+                            I chose a generous <span class="fw-medium">cutoff frequency of about 40 Hz</span>, corresponding to an <span class="fw-medium">alpha of 0.63</span>. I did not want to completely mute my signal trusting that some awareness of vibrations or bumps could prove to be useful. 
+                            However, this would only serve as a baseline for further refinement as the lab continued. See ImuCommands.h:<span class="fw-bold fst-italic"> get_Roll_lpf(), get_Pitch_lpf()</span>. Below are the initial results.
+                        </p>
+                        <div class="d-flex justify-content-center my-2">
+                            <img class="align-self-center w-50" src="assets/lab2/Roll_lpf1.png" alt="...">
+                        </div>
+
+
+                        <h3 class="fw-bolder text-dark mt-5">Gyroscope</h3> <hr style="margin-top: 0;">
+                        <h4 class="fw-bolder text-dark mt-3">1. Deriving Pitch and Roll</h4> 
+                        <p class="fw-light mb-3">
+                            The gyrscope can also be used to determine the orientation of the RC robot. Using the equations from lecture, I derived angles for pitch and roll using the equations given in class. See <span class="fw-bold fst-italic">ImuCommands</span>.
+                        </p>
+                        <div class="d-flex justify-content-center mb-5">
+                            <img src="assets/lab2/gyro.png" alt="" class="align-self-center w-25">
+                        </div>
+                        <p class="fw-light">
+                            It was very responsive and has, comparably, no noise at all. The inconvenience with this sensor is that there is a 
+                            significant drift in the readouts overtime due to the nature of the equation. The drift time is proportional to the sampling rate.
+                            Increasing the sampling rate will reduce the rate of this drift.
+                        </p>
+                        <div class="d-flex justify-content-center mb-5"> 
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/b_bvOW9m9Ds?si=pwGFSDG02sabc15y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <h4 class="fw-bolder text-dark mt-3">2. Complimentary Filter</h4> 
+                        <p class="fw-light">
+                            Using the equations from class, I implemented a complimentary filter which sought to take the good of both the Accelerometer and the Gyroscope. The equation is as follows: 
+                        </p>
+                        <div class="d-flex justify-content-center my-2">
+                            <img class="align-self-center w-25" src="assets/lab2/complimentary.png" alt="...">
+                        </div>
+                        <p class="fw-light">
+                            I next defined <span class="fw-bold fst-italic">getRoll_comp()</span> and <span class="fw-bold fst-italic">getPitch_comp()</span>, which
+                            used a modifed version of this equation. Conversely, I used the filtered accelerometer data and defined two weigths 
+                            <span class="fw-medium">alpha</span>(used in Low Pass Filter to filtrate unwanted vibrations) and 
+                            <span class="fw-medium">beta</span>(used in Complimentary Filter to balance the contributions). 
+                        </p>
+                        <p class="fw-light">
+                            Below is a video showing its performance. It has the responsiveness of the gyroscope with no drift over time <span class="fw-medium">(alpha = 0.63, beta = 0.02)</span>.
+                        </p>
+                        <div class="d-flex justify-content-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/rOE3fsPvWGs?si=qwbPeGD0M2YvXTcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div> 
+
+                        <h3 class="fw-bolder text-dark mt-5">Data Sampling + Fine Tuning</h3> <hr style="margin-top: 0;">
+                        <p class="fw-light">
+                            Next, I fine tuned my code for efficient implmentation of my ICU sensor. Below is a list of final objectives for this lab:
+                        </p>
+                        <ul class="fw-light list-group-numbered align-items-center">
+                            <li class="list-group-item text-center">Send over > 5s of IMU Data</li>
+                            <li class="list-group-item text-center">Maximize Sampling Rate</li>
+                            <li class="list-group-item text-center">Refine Filter</li>
+                        </ul>
+                        <p class="fw-light">
+                            First, I removed all of the redundant code (<span class="fw-light">delay(), Serial.print()</span>) within my Arduino program in order to increase my sampling rate. See <span class="fw-medium fst-italic">Arduino IDE Code</span>
+                        </p>
+
+                        <h4 class="fw-bolder text-dark mt-3">1. Time Stamped IMU Data</h4> 
+                        <p class="fw-light">
+                            After removing any potential delays, I implemented a new command <span class="fw-bold fst-italic">GET_IMU_DATA</span> which sends all of the relevant data I've recorded from the sensor to my laptop in a single string. See <span class="fw-medium fst-italic">Arduino IDE Code</span>
+                        </p>
+                        <p class="fw-light">
+                            I decided to create multiple array for each variable, mainly to simplify indexing algorithims within the code. In addition, 
+                            this will be easier to isolate individual arrays in the case of a bug or problem.
+                        </p>
+                        <p class="fw-light">
+                            All of my arrays are float data types with the exception of Time Stamps which is int. I made this choice in favor of precise data points.
+                            This did infact come at an extra cost towards memory. With my current code, I am able to allocate approximately 9300 elements 
+                            per array. As of now this will be more then enough. 
+                        </p>
+                        <h4 class="fw-bolder text-dark mt-3">2. Post Processing In Python</h4> 
+                        <p class="fw-light">
+                            In python, I updated my <span class="fw-bold fst-italic">Notification_Handler()</span> (See <span class="fw-medium fst-italic">Arduino IDE Code</span>) to
+                            parse through the IMU data. Below is an example of the messages my laptop recieved. 
+                        </p>
+                        <p class="text-center fw-light fst-italic"> IMU1| Time Stamps | accRoll , accPitch , gyrRoll ! gyrPitch ! gryYa ; Roll_LPF ; Pitc_LPF : Roll_Comp : Pitch_Comp.</p>
+                        <div class="d-flex justify-content-center my-2">
+                            <img class="align-self-center w-50" src="assets/lab2/imuString.png" alt="...">
+                        </div>
+                        <p class="fw-light mt-2">
+                            From here I processed the data and ran a few validation tests to compare the raw data to my filtered data. Below are the results: 
+                        </p>
+                        <div class="d-flex justify-content-center my-2">
+                            <img class="align-self-center w-50" src="assets/lab2/FinalFiltering.png" alt="...">
+                        </div>
+                        <p class="fw-light">
+                            The graph above shows that everything is working as expected. By adding some seperation between Roll and Pitch, we are able to see a nice development between the different filtering. 
+                            The low pass filter did a good job filtering out the noise, and the complimentary filter even better. Finding myself satisified with the results, I updated my values for alpha and beta using the FFT functions. 
+                            Also, I increased my array size enough to where I could send over 5 seconds of data while maintaining a high sampling rate.
+                        </p>
+
+                        <h5 class="fw-bolder text-center text-decoration-underline text-dark my-3">Final Metrics and Specifications</h6> 
+                        <ul class="fw-light list-unstyled align-items-center">
+                            <li class="list-group-item text-center"><span class="fw-medium">Alpha</span> = 0.4 <span class="fw-medium">Beta</span> =0.0048</li>
+                            <li class="list-group-item text-center"><span class="fw-medium">Array Size:</span> 1200 Elements</li>
+                            <li class="list-group-item text-center"><span class="fw-medium">Sampling Rate:</span> 185 Data Points per Second</li>
+                            <li class="list-group-item text-center"><span class="fw-medium">Duration of Data:</span> 6.4 s</li>
+                        </ul>
+
+
+
+                        <h3 class="fw-bolder text-dark mt-3">Record a Stunt!</h3> <hr style="margin-top: 0;">
+                        <div class="d-flex justify-content-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/1Kto76dyGos?si=BT5zeVGVEfkhg7lu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div> 
+                        <h3 class="fw-bolder text-dark mt-3">Resources</h3><hr style="margin-top: 0;">
+                        <div class="fw-light">
+                            <p>
+                                <span class="fw-medium fst-italic">ChatGPT:</span> Served as valuable resource for programming in C and html. This AI did not serve to be useful for developing logic and algorithim.
+                                Rather it was used for finding function documentation and aquiring knowledge for unknown built-in functions. This was useful when reviewing the given lab code and understanding the algorithims. 
+                            </p>
+                            <p>
+                                <span class="fw-medium fst-italic">Wenyi Wu Webpage:</span> Referenced webpage for inspriation and lap report guidance 
+                            </p>
+                            <p><span class="fw-medium fst-italic">Nila Narayan Webpage:</span> Referenced webpage for support and an additional approach for the lab writeup.</p>
+                            <p class=" fw-light">
+                                <a href="https://www.mouser.com/datasheet/2/737/calibrating_sensors-2525939.pdf#11" class="link fw-light">
+                                    <span class="fw-medium fst-italic"> Bill Earl</span> 
+                                </a>
+                                : Report on Sensor Calibration
+                            </p>
+
+                            <p class=" fw-light">
+                                <a href="https://towardsdatascience.com/fourier-transform-the-practical-python-implementation-acdd32f1b96a/" class="link fw-light">
+                                    <span class="fw-medium fst-italic"> Towardsdatascience.com</span> 
+                                </a>
+                                : Fast Fourier Transform Resource with Python examples
+                            </p>
+                            <p class=" fw-light">
+                                <a href="https://github.com/mattzzw/Arduino-mpu6050" class="link">
+                                    <span class="fw-medium fst-italic"> Mattzzzw Github</span> 
+                                </a>
+                                : Got the link from a youtube video. Used to interpret unexpected results from gyroscope. 
+                            </p>
+                            
+                            
+                        </div>
+
 
     <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
