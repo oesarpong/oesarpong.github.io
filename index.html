@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Fast Robots Student Website</title>
-    <meta name="description" content="add later" />
+    <meta name="description" content=" add later" />
     <meta name="author" content=" Ethan Sarpong" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -15,10 +15,7 @@
 <body>
     <!-- Responsive Navbar-->
     <nav class="navbar navbar-expand-lg px-3 bg-dark sticky-top" style=" z-index: 1000; width:100%; height: 3rem;">
-        <a class="navbar-brand text-white"> <p class="h4"> <span class="fw-bold "style = "color:tomato;"> MAE 4190 </span> Fast Robots</p> </a>
-        <!-- <a class="navbar-brand align-items-center pb-3" href="#">
-            <img src="assets/lab 1/icon.svg" alt="Bootstrap" width="25" height="25">
-          </a>     -->
+        <a class="navbar-brand text-white"> <p class="h4"> <span class="fw-bold "style = "color:tomato;"> MAE 4190 </span> Fast Robots</p> </a>  
     </nav>
     <!-- Main Grid Layout -->
     <div class="container-xs px-3 my-3 ">
@@ -43,11 +40,17 @@
                                         <button class="btn px-5 btn-outline-light my-1 fw-medium" type="button" onclick="window.location.href='index.html';">
                                             Homepage
                                         </button>       
-                                        <button class="btn px-5 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab1.html';">
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab1.html';">
                                             Lab 1: Artemis & Bluetooth
                                         </button> 
-                                        <button class="btn px-5 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab2.html';">
-                                            Lab 2: IMU
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab2.html';">
+                                            Lab 2: IMU Sensor
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab3.html';">
+                                            Lab 3: ToF Sensor
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab4.html';">
+                                            Lab 4: Motors and Open Loop Control
                                         </button> 
                                     </div>
                                 </li>
@@ -61,11 +64,8 @@
                             </footer> 
                         </div>
                     </div>
-
-                    </a>
                 </div>
-            </div>
-
+            </div>  
             <!-- Main Column -- Page Content -->
             <div class="col col-md-9 bg-white overflow-y-scroll" style="height:88vh;">
                 <div class="d-flex flex-column ms-5 mx-3" id="text-heading-1">
@@ -95,33 +95,48 @@
                     </div>
                     <hr>
                     <!-- Labs -->
-                    <h1 class="text-capitalize ms-3 mb-4"><span class="fw-bold" style="color:tomato; font-size: clamp(3rem, 3vw, 3.5rem);"> Lab Assignments</span></h1>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col col-md-6">
-                            <div class="card rounded-5 h-100" >
-                                <img src="assets/IMG_90BE715F07B1-1.jpeg" class="card-img-top" alt="...">
-                                <div class="card-header fs-4 text-center text-white fw-bold bg-dark"> LAB 1: Artemis/Bluetooth</div>
-                                <div class="card-body bg-dark text-white">
-                                    <p class="card-text fw-light text-center pb-3">Set up the Artemis Board using Arduino IDE and gaining a familiarity sending and recieving commands via Bluetooth. 
-                                    </p>
-                                    <div class="d-flex justify-content-center"><a onclick="window.location.href='lab1.html#a-tab-pane';" class="btn btn-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+                    <h1 class="text-capitalize ms-3 mb-4"><span class="fw-bolder" style="color:tomato; font-size: clamp(3rem, 3vw, 3.5rem);"> Lab Assignments</span></h1>
+                    <div class="card bg-dark text-white mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="assets/IMG_90BE715F07B1-1.jpeg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title fw-bold">Lab 1: Artemis/Bluetooth</h5>
+                              <p class="card-text">Set up the Artemis Board using Arduino IDE and gaining a familiarity sending and recieving commands via Bluetooth.</p>
+                              <a onclick="window.location.href='lab1.html';" class="btn btn-primary" style="background-color: tomato; border-color: tomato;">Read More</a>
+                          </div>
                         </div>
-                        <div class="col col-md-6">
-                            <div class="card rounded-5" >
-                                <img src="assets/lab2/IMG_4806.jpg" class="card-img-top align-item-center" alt="...">
-                                <div class="card-header fs-4 text-center text-white fw-bold bg-dark"> LAB 2: IMU</div>
-                                <div class="card-body bg-dark text-white">
-                                    <p class="card-text fw-light text-center pb-3"> Implemented the IMU sensor into my program, which includes Accelermeter and Gyroscope data
-                                        processing and filtering
-                                    </p>
-                                    <div class="d-flex justify-content-center"><a onclick="window.location.href='lab2.html';" class="btn btn-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+                      </div>
+                    </div>
+                    <div class="card bg-dark text-white mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="assets/lab2/IMG_4806.jpg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title fw-bold">Lab 2: IMU Sensor</h5>
+                              <p class="card-text">Implemented the IMU sensor into my program, which includes Accelermeter and Gyroscope data processing and filtering</p>
+                              <a onclick="window.location.href='lab2.html';" class="btn btn-primary" style="background-color: tomato; border-color: tomato;">Read More</a>
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                    <div class="card bg-dark text-white mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="assets/lab3/cover.jpg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title fw-bold">Lab 3: Time of Flight Sensor</h5>
+                              <p class="card-text">Setup and equiped my robot with a distance sensor. I configured this setup to support multiple ToF sensors recieving reading as fast as possible.</p>
+                              <a onclick="window.location.href='lab3.html';" class="btn btn-primary" style="background-color: tomato; border-color: tomato;" >Read More</a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 </div>                  
             </div>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fast Robots Student Website</title>
+    <meta name="description" content=" add later" />
+    <meta name="author" content=" Ethan Sarpong" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Responsive Navbar-->
+    <nav class="navbar navbar-expand-lg px-3 bg-dark sticky-top" style=" z-index: 1000; width:100%; height: 3rem;">
+        <a class="navbar-brand text-white"> <p class="h4"> <span class="fw-bold "style = "color:tomato;"> MAE 4190 </span> Fast Robots</p> </a>
+    </nav>
+    <!-- Main Grid Layout -->
+    <div class="container-xs px-3 my-3 ">
+        <div class="row">
+            <!-- Side Column -- About Me + Navigation -->
+            <div class="col-12 col-md-3 text-md-center px-4">
+                <div class="overflow-y-auto container-md bg-white" style= "max-height: 100%;">
+                    <header class ="container d-md-none">  
+                        <a><h1 class="text-capitalize"><span class="fw-bold" style="color:tomato;">Welcome!</span></h1>
+                        <div class="w-100"></div> <h3 class="fw-bold text-dark text-wrap text-justify"> Student Fast Robots Course Webpage</h3></a>
+                    </header>
+                    <!-- About Card-->
+                    <div class="shadow bg-dark-subtle mx-1 rounded">
+                        <div class="card bg-dark py-3 px-3 mx-0 mt-3 align-items-center text-light ">
+                            <img src="assets/profile.jpg" class= "img-fluid d-none d-md-block rounded-circle " alt="..."  style = "width: 75%; height: 75%;">
+                            <img src="assets/profile.jpg" class= "img-fluid d-md-none rounded-circle " alt="..."  style = "width: 50%; height: 50%;">
+                            <h3 class="card-title fw-bolder text-center my-2 px-3"> Ethan Sarpong</h3>
+                            <h6 class="card-title text-center px-3" style="color: rgb(173, 173, 173);"> Mechanical Engineer | eos29</h6>
+                            <ul class="nav nav-underline">
+                                <li class="nav-item justify-content-center">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <button class="btn px-5 btn-outline-light my-1 fw-medium" type="button" onclick="window.location.href='index.html';">
+                                            Homepage
+                                        </button>       
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab1.html';">
+                                            Lab 1: Artemis & Bluetooth
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab2.html';">
+                                            Lab 2: IMU Sensor
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab3.html';">
+                                            Lab 3: ToF Sensor
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab4.html';">
+                                            Lab 4: Motors and Open Loop Control
+                                        </button> 
+                                    </div>
+                                </li>
+                            </ul>
+                            <footer class="pt-1 pb-2 my-3">
+                                <div class="container">
+                                    <h3 class=""><span class="fw-bold" style="color:tomato;">Contact Information<span></h3>
+                                    <p class="fw-medium">Email: <span class="fw-light">eos29@cornell.edu</span></p>
+                                    <p class="fw-medium lh-1">LinkedIn: <small><a class="link-opacity-10-hover" href="https://www.linkedin.com/in/ethan-sarpon/">https://www.linkedin.com/in/ethan-sarpon/</a></small></p>
+                                </div> 
+                            </footer> 
+                        </div>
+                    </div>
+                </div>
+            </div>           
+            <!-- Main Column -- Page Content -->
+            <div class="col-12 col-md-9 bg-white overflow-y-scroll px-5 " style="height: 100vh;">
+                <div class="d-flex flex-column ms-2 fw-ligh text-darkt">
+                    <h1 class="text-capitalize fw-bolder mt-3">
+                        <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);"> Lab 3 - Time of Flight Sensor</span>
+                    </h1>
+                    <h2 class="fw-bolder mt-3">Introduction</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Within this lab, I setup and equiped my robot with a distance sensor. I configured this setup to support multiple ToF sensors to recieve readings as fast as possible.
+                    </p>
+
+
+                    <h2 class="fw-bolder mt-3">Prelab</h2> <hr style="margin-top: 0;">
+                    <div class="row px-5 mb-3">
+                        <div class="col-4 card py-2 border-black justify-content-center">
+                            <div class=" text-center align-items-center">
+                                <h5 class="fw-medium text-decoration-underline">Sensor Specifications</h5> 
+                                <div class="ms-3">
+                                    <p class="fw-light my-0"><span class="fw-medium">Type</span>: VL53L1X</p>
+                                    <p class="fw-light my-0"><span class="fw-medium">Function Library</span>: SparkFun_VL53L1X.h</p>
+                                    <p class="fw-light my-0"><span class="fw-medium">I2C Address</span>: 0x52</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <h5 class="fw-medium mt-2">Approach for 2 Sensors</h5>
+                            <p class="fw-light ms-3">Each sensor is hardwired with the same I2C address. In order to address the sensors individually, I decided to change the address of one of the sensors programmatically through a Shutoff Pin.
+                                I believe this will be useful in later labs when we program for localization and planning. The other option was polling, which would simple, but this could decrease the sampling rate of the microcontroler.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container-fluid text-dark fw-light">
+                        <h4 class="fw-medium mt-3">Component Placement</h4>
+                        <p>
+                            Before moving forward with the hardware, it was valuable to begin considering the placement of the different components to avoid mistakes or unecessary alterations.
+                            Most of the components were placed for ease of access seeing as they interact with other parts of the car that are fixed (i.e. Motor Drivers & Motor/Battery Connection). Conversely, I decided to place 
+                            the ToF sensors on opposite ends of the car. I figured that placing them too close to the tires will likely cause disturbances and has large room for human error when placing. 
+                        </p>
+                        <p>
+                            Additionally, <span class="fst-italic" style="color: tomato;">Section A-A</span> depicts a container, hidden by this point of view, which I will use to place another batter and the IMU. This allows the IMU to be a bit closer to the COM and allows me to utlize all of the QWIIC Breakout Board. I just had to drill a whole into the chassis for wire access. 
+                        </p>
+                        <div class="d-flex justify-content-center"><img class=" align-self-center mb-1 w-50" src="assets/lab3/diagram2.png" alt="..."></div>
+                        <h4 class="fw-medium mt-3">Wiring Diagram</h4>
+                        The following is a picture of the wiring diagram for the ToF Sensors (<span class="fst-italic">Wenyi Fu 2024.</span>)
+                        <div class="d-flex justify-content-center"><img class="align-self-center my-4 w-50" src="assets/lab3/diagram.png" alt="..."></div>
+                    </div>
+                    
+
+
+                    <h2 class="fw-bolder text-dark mt-3">Lab Tasks</h2> <hr style="margin-top: 0;">
+                    <div class="container text-dark fw-light">
+                        <h4 class="fw-medium mt-3">Wiring/Connections</h4>
+                        <div class="d-flex justify-content-center py-3"><img class="border border-dark align-self-center w-50" src="assets/lab3/setup1.jpg" alt="..."></div>
+                        <h4 class="fw-medium mt-3">Scanning for I2C Addresses</h4>
+                        I began by having the Artemis scan the I2C channels and report back what addressed it could identify. When running the code, though I had three sensors plugged in, the Atremis only read 
+                        two unique addresses: <span class="fst-italic" style="color: tomato;">0x29</span> ToF & <span class="fst-italic" style="color: tomato;">0x69</span> IMU. 
+                        <p class=""></p>
+                        These hexademical numbers are actually 7-bit addresses. The I2C uses the "least significant bit" to read and write. When adding a 1 or 0 to the end ofthe 8-bit address, 0x29 becomes 0x52 which matches the ToF specifications.
+                        <div class="d-flex justify-content-center my-4"><img class="border border-dark align-self-center w-50" src="assets/lab3/I2C1.png" alt="..."></div>
+                        In order seperate the ToF sensors, I used the <span class="fst-italic" style="color: tomato;">SparkFun_VL53L1X.h</span> library to overwrite the hardwired address. In order to ensure I was overwriting only a single sensor, I used the <span class="fst-italic" style="color: tomato;">XSHUT</span> Pin to 
+                        turn off the other sensor during this process. The results were 3 seperate I2C addresses.
+                        <div class="d-flex justify-content-center mt-3 my-4"><img class="border border-dark align-self-center w-50" src="assets/lab3/I2C2.png" alt="..."></div>   
+                        <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/ac4fc49104f73783963b8b38c4582905.js"></script>
+                        </div>    
+                        <h4 class="fw-medium mt-3">Distance Mode: Short</h4>
+
+                        Next, I tested out a few different distance modes to get an idea of the performance of the sensor. Below is a table explaining these different modes.
+
+                        <div class="d-flex justify-content-center my-3"><img class="align-self-center w-75" src="assets/lab3/table1.png" alt="..."></div>
+                        <p >
+                            Using <span class="fst-italic" style="color: tomato;">Example1_ReadDistance.ino</span>, I tested out a single sensor by creating a controlled environment to compare my results across. 
+                            I set the sensor about 1-ft away from an object and recorded the results.
+                        </p>
+                        <div class="row">
+                            <div class="col-6"> 
+                                <h5 class="fst-italic text-center mt-3 mb-2">Setup</h5>
+                                <div class="d-flex container justify-content-center"><img class="img-fluid border border-dark align-self-center" src="assets/lab3/setup4.png" alt="..."></div>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="fst-italic text-center mt-3 mb-2">Distance Readings</h5>
+                                <div class="d-flex justify-content-center my-3"><img class="img-fluid border border-dark align-self-center" src="assets/lab3/distance1.png" alt="..."></div> 
+                            </div>
+                        </div>
+                        <p class="mt-3">
+                            Below is a table providing a discussion on how the general performance of the sensor acorss its functional range.
+                        </p>
+                        <div class="row my-4">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                                <div class="fw-bolder">
+                                    <h5 class="fw-bolder text-center mt-3 mb-1">Table 2. Sensor Performance</h5>
+                                </div>
+                                <table class="table table-striped align-self">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">Metric</th>
+                                        <th scope="col">Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">Sensor Range</th>
+                                        <td>
+                                            <ol class="list-group-item"> Long Distance -- LOW: 1-2ft, HIGH: 15-16ft (reliably within 14ft)</ol>
+                                            <ol class="list-group-item">Short Distance -- LOW: 1-2ft , HIGH: 6-7ft (above 7 reads zero)</ol>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">Accuracy</th>
+                                        <td>
+                                            Measured about 1.02-1.03 ft when it was about 1 ft away. Considering human error this is reliable. See Distance Reading.
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">Precision</th>
+                                        <td>
+                                            Reliable. Uncertainty: +/- 0.005 m / +/- 0.01 ft                                          
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+                        <h4 class="fw-medium mt-3">2 ToF Sensor</h4>
+                        Aftering getting a single ToF sensor to work, I added another sensor, using the approached discussed in <span class="fw-medium fst-italic">Scanning for I2C Adresses</span>.
+                        Notably, I was able to alter my program to accomdate both sensors and have them work independently. Therefore, my approach for using two sensors worked successfully!
+                        <h5 class="fst-italic text-center mt-4 mb-2">Setup</h5>
+                        <div class="d-flex justify-content-center">
+                            <img class="border border-dark align-self-center w-50" src="assets/lab3/setup5.jpg" alt="...">
+                        </div>
+                        <h5 class="fst-italic text-center mt-4 mb-2">Procedure</h5>
+                        <div class="d-flex justify-content-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/fNjsXIH0b7c?si=KUzWp_LrBHw81t38" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <h5 class="fst-italic text-center mt-4 mb-2">Screen</h5>
+                        <div class="d-flex justify-content-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/bVQnfyeD2To?si=UTTBTdPUBYRnE78A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <h4 class="fw-medium mt-3">ToF Sensor Ranging Speed</h4>
+                        The effectiveness of these sensors are heavily reliant on the speed at which it receives new data. Therefore, it is significant to consider how long it takes the sensor to do this, further identifying limiting factors. 
+
+                        <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/833a1f0fc926e52dfa29a50e57e38c75.js"></script>
+                        </div>    
+                        <p class="">
+                            The sensor are able to gather data at <span class="fw-medium">speed of 6-7 ms</span>. I believe that this sensor speed is limited by either <span class="fw-medium">ambient lighting or the target surface</span>. For the most part, the speed was consistent even when changing the modes and
+                            inspection distances. 
+                        </p>
+                        <div class="d-flex justify-content-center mt-3">
+                            <img class="border border-dark align-self-center w-50" src="assets/lab3/ranging.png" alt="...">
+                        </div>
+                        <h4 class="fw-medium mt-3">2 ToF Sensor and IMU</h4>
+                        <div class="d-flex justify-content-center my-4">
+                            <img class=" border border-black align-self-center w-50" src="assets/lab3/imu_tof.jpg" alt="...">
+                        </div>
+                        I was now happy with my implementation of the ToF sensor. Next I needed to verify that my Artemis could handle 2 ToF Sensors and the IMU simultaneously. I used the same alogrithims from the previous code snippets, and <span class="fw-medium">combined this with my main library of classes and functions</span>. 
+                        In addition, I also set up commands to send and receive data over from all my sensors. 
+                        <div class="d-flex justify-content-center mt-4">
+                            <img class="align-self-center w-75" src="assets/lab3/DistancevsTime.png" alt="...">
+                        </div>
+                        <div class="d-flex justify-content-center mt-4">
+                            <img class=" align-self-center w-75" src="assets/lab3/AnglevsTime.png" alt="...">
+                        </div>
+                        <p class="mt-3">
+                        With just a single IMU sensor, I was able to sample data at 185 samples per second. Using <span class="fw-medium">several different sensor saw a significant reduction in computing time</span> even when reducing the number of arrays storing data. 
+                        For the same sampling size storing data for <span class="fst-italic" style="color: tomato;">Time Stamps</span>, <span class="fst-italic" style="color: tomato;">Complimentary Filter</span> (2), and <span class="fst-italic" style="color: tomato;">Distance Readings</span> (2) my sampling rate reduced by almost a factor of 100. 
+                        </p>
+                        <p class="">
+                            As a solution I refined my code to use <span class="fw-medium">pointers and stored memory, which significantly increased the sample rate</span>. A notable function for this was 
+                            <span class="fst-italic" style="color: tomato;">memmove()</span>. Below is the code for how I now populated arrays. 
+                        </p>
+                        <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/dc72926008309b8f3a41b620d3b936c7.js"></script>
+                        </div> 
+                        <h5 class="fst-italic text-center mt-4 mb-2">Final Metrics</h5>
+                        <div class="d-flex justify-content-center mt-4">
+                            <img width="30%" class=" align-self-center" src="assets/lab3/metrics.png" alt="...">
+                        </div>
+                        <h3 class="fw-bolder text-dark mt-3">Resources</h3><hr style="margin-top: 0;">
+                        <div class="fw-light">
+                            <p>
+                                <span class="fw-medium fst-italic">ChatGPT:</span> Served as valuable resource for programming in C and html. This AI did not serve to be useful for developing logic and algorithim.
+                                Rather it was used for finding function documentation and aquiring knowledge for unknown built-in functions. Relied on this heavily during this lab while debugging. Proved very useful on topics
+                                like pointers, memory, I2C, and bit conversion documentation
+                            </p>
+                            <p>
+                                <span class="fw-medium fst-italic">Wenyi Wu Webpage:</span> Used Schematics for Wiring ToF Sensors. Referenced to compare my results. 
+                            </p>
+                            <p><span class="fw-medium fst-italic">Nila Narayan Webpage:</span> Reference wiring confirguration. Used as another resource for writing lab report.</p>
+                            <span class="fw-medium fst-italic">Specification/Data Sheets:</span>
+                            <ul class="list-group-numbered">
+                                <li class="list-group-item">
+                                    <a href=" https://github.com/sparkfun/SparkFun_VL53L1X_Arduino_Library/blob/master/src/SparkFun_VL53L1X.h" class="link">Sparkfun Distance Sensor Library GITHUB on Functions:</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="https://www.pololu.com/file/0J1506/vl53l1x.pdf" class="link">General ToF Info</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+
