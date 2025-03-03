@@ -68,10 +68,192 @@
             </div>          
             <!-- Main Column -- Page Content -->
             <div class="col-12 col-md-9 bg-white overflow-y-scroll px-5 " style="height: 100vh;">
-                <div class="d-flex flex-column ms-2 fw-ligh text-darkt">
+                <div class="d-flex flex-column ms-2 text-darkt">
                     <h1 class="text-capitalize fw-bolder mt-3">
                         <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);"> Lab 4: Motors and Open Loop Control</span>
                     </h1>
+                    <h2 class="fw-bolder mt-3">Introduction</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Within this lab, I setup and equiped my robot with a distance sensor. I configured this setup to support multiple ToF sensors and recieve readings as fast as possible.
+                    </p>
+                    <h2 class="fw-bolder mt-3">Prelab</h2> <hr style="margin-top: 0;">
+                    <div class="fw-light">
+                        I created a diagram demonstrating which connections between pins and components. This lab was very hands on with a focus on hardware so it 
+                        was important that I was well prepared. Below is picture of the diagram I used to put together my robot. Sadly, I was not the best at drawing straight lines. 
+                        </span>
+                        <div class="d-flex justify-content-center my-3"><img class="img-fluid align-self-center w-75" src="assets/lab4/wiring.jpg" alt="..."></div> 
+                        As shown on the diagram, I parallel-coupled the inputs and outputs on the motor drivers allowing double the average current without overheating the chip.
+                    </div>
+                    <h4 class="fw-bold mt-3">Battery Discussion</h4>  
+                    <p class="fw-light">
+                        <span class="fw-medium">Two 850 mAh batteries</span> were used in this setup. It is not clear from the diagram, but one battery was used in parallel for the motors and the other for the Artemis board. 
+                        Using seperate batteries is useful to <span class="fw-medium">avoid drawing too much current</span> from the motor drivers into the micro controller which could lead to a <span class="fw-medium">short circuit or damadge</span>. In addition, 
+                        we can greatly <span class="fw-medium">reduce the noise</span> from the motors drivers, hence, cerating the most efficient operating conditions for the microcontroller. 
+                    </p>
+                    <h2 class="fw-bolder mt-5">Lab Tasks</h2> <hr style="margin-top: 0;">
+                    <h4 class="fw-bold mt-3">Wiring & Testing Single Motor Driver</h4>  
+                    <p class="fw-light">
+                        To begin, I soldered the motor driver based on the diagram above making sure the necessary power and signal inputs where connected. Before putting the sensor into the car, I decided to 
+                        test the motor driver on an oscilliscope powered from an external power supply. Additionally, I was very intentional about measuring and wrapping wires to minimize the amount lose wires. This proved to be of great service later on in the lab. 
+                    </p>
+                    <div class="d-flex justify-content-center my-3"><img class="border border-black img-fluid align-self-center w-50" src="assets/lab4/testing1.jpg" alt="..."></div> 
+                    <p class="fw-light mt-2">
+                        Notably, I set the power supply to output a <span class="fw-medium">set current of 2mA.</span> Because I was only testing the output of the motor driver with no load, I only needed a small amount of current to put us within the operating range. 
+                    </p>
+                    <p class="fw-light">
+                        Next, I sent time varying PWM signals to the drivers from the artemis board and monitored the readout from the oscilliscope. Additionally, I verified that the expected PWM signals were coming from both pins.
+                    </p>
+                    <div class="row py-3">
+                        <div class="col-4">
+                            <img class="border border-black img-fluid align-self-center" src="assets/lab4/25duty.JPG" alt="...">
+                            <div class="p fst-italic text-center fw-light">25% Duty</div>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <img class="border border-black img-fluid align-self-center" src="assets/lab4/50duty.JPG" alt="...">
+                            <div class="p text-center fst-italic fw-light">50% Duty</div>
+                        </div>
+                        <div class="col-4">
+                            <img class="border border-black img-fluid align-self-center" src="assets/lab4/75duty.JPG" alt="...">
+                            <div class="p text-center fst-italic fw-light">75% Duty</div>
+                        </div>         
+                        <div class="col-1"></div>               
+                        <div class="col-4 my-4">
+                            <img class="border border-black img-fluid align-self-center" src="assets/lab4/100duty.JPG" alt="...">
+                            <div class="p text-center fst-italic fw-light">100% Duty</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mt-4 px-5 mx-4 align-self-center" style="max-height: 28.8vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                                <script src="https://gist.github.com/oesarpong/2b77b66163fea0e00a742913c88c93fb.js"></script>
+                            </div> 
+                            <div class="p text-center fst-italic fw-light">Code</div>
+                        </div>
+                        <div class="col-1 mb-5"></div>    
+                        <div class="d-flex justify-content-center mt-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/uyHSJcXt3NQ?si=ZVKu8N8lTQEBEuG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="p text-center fst-italic fw-light">Live Video</div>
+                    </div>
+                    <h4 class="fw-bold mt-5">Spinning Wheels on Single Side</h4> 
+                    <p class="fw-light">Next, I connected the drivers to the actual motors and verified that everything worked as expected.</p>
+                    <div class="row my-3">
+                        <div class="col-8">
+                            <div class="d-flex justify-content-center mt-3">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/5aPprutIrlU?si=XT4uYoC5w_RdehVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-4 pt-5 my-1">
+                            <div class="align-self-center" style="max-height: 28.8vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                                <script src="https://gist.github.com/oesarpong/80b17853d752e22434c7cdf1dd0ac811.js"></script>
+                            </div> 
+                            <div class="p text-center fst-italic fw-light">Code</div>
+                        </div>
+                    </div> 
+                    <h4 class="fw-bold mt-5">Spinning Wheels on Both Side</h4> 
+                    <p class="fw-light">
+                        I repeated the above steps for an additional motor driver and checked to see if all of my pins were working correctly. 
+                    </p>
+                    <div class="d-flex justify-content-center mt-3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hGYbvk4Fp_Y?si=zK5tar2koXwjbo8f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="fw-bold mt-5">Securing Components to RC Car</h4> 
+                    <p class="fw-light">
+                        Once all of my components worked, I secured all of the sensors accordingly based on the diagram found in the <span class="fw-medium fst-italic" style="color: tomato;">Lab 3 Prelab</span>. One thing unique to my car is the placement of the IMU sensor. I drilled a hole in the chassis
+                        of the car and used that as a channel for the wires. This allowed me to place the IMU on the underside of the car and closer to its center of mass. In the future, I will need to apply a rotation matrix to properly the utilize my acclerometer and gyroscope.    
+                    </p>
+                    <div class="d-flex justify-content-center mt-3">
+                        <img class="img-fluid align-self-center w-75" src="assets/lab4/components.png" alt="...">
+                    </div>
+                    <h4 class="fw-bold mt-5">Lower Limit PWM Value Discussion</h4> 
+                    <p class="fw-light">
+                        The lower limit PWM value refelcts the minimum power needed for the motor drivers to overcome sources of loss. 
+                        This value is dependent on the coefificent between the wheels and the ground so this number will vary depending on the surface. 
+                    </p>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-5 pe-5"><p class="fw-medium text-end pe-5">Synced Limit: <span class="fw-light">34</span></p></div>
+                        <div class="col-5 ms-5"><p class="fw-medium text-start ps-5">Axis Turn Limit: <span class="fw-light">102</span></p></div>
+                        <div class="col-1"></div>
+                    </div>
+                    <p class="fw-light"> 
+                        On carpet these lower limit PWM values were higher requiring more to get the car to move. 
+                        The most significant <span class="fw-medium">source of losses comes from the static friciton</span>. This is useful to consider in future labs when creating controllers. 
+                    </p>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-4 me-4">
+                            <div class="d-flex justify-content-center mt-3">
+                                <iframe width="315" height="520" src="https://youtube.com/embed/tF1ydyeuH-4?si=GTV2aJJk7QjVQJOJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-4 ms-4">
+                            <div class="d-flex justify-content-center mt-3">
+                                <iframe width="315" height="520" src="https://youtube.com/embed/Qe3OQLeFh-Q?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    <h4 class="fw-bold mt-5">Wireless Control</h4> 
+                    <p class="fw-light">
+                        By this point in the lab, having to burn new code on to the artemis became increasingly tedious. To limit procedural repetition, I defined some <span class="fw-medium">additional commands to troubleshoot and debug</span> using the 
+                        bluetooth connection with my laptop. Below is the code for the new commands programmed on to the board.     
+                    </p>
+                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/2d7f90bc01a33cc63a5df7cd2c38f848.js"></script>                    
+                    </div> 
+                    <p class="fw-light">In summary, the new commands include: 
+                        <span class="fw-medium fst-italic" style="color: tomato;">MOTORS_ON</span>,
+                        <span class="fw-medium fst-italic" style="color: tomato;">BRAKE</span>,
+                        <span class="fw-medium fst-italic" style="color: tomato;">AXIS_TURN</span>, and
+                        <span class="fw-medium fst-italic" style="color: tomato;">CAL_MOTOR</span>. These commands will be used in the remainder of this report.
+
+                    <h4 class="fw-bold mt-5">Calibrating Motor Imbalance for Straight Line Motion</h4> 
+                    <p class="fw-light">
+                        I decided to implement a calibration factor after noticing that my motors did not spin at the same rate. This calibration is simply a weighted function to balance our the motors responses. As a result, I used 
+                        <span class="fw-medium fst-italic" style="color: tomato;">CAL_MOTOR</span> and tuned my robot until it was able to drive realitvely straight for about 2 feet.  When the motors were synced I used a calibration factor of
+                        <span class="fw-medium">0.7</span>, and during axis rotation I used a factor of <span class="fw-medium">1</span>. 
+                    </p>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-4 me-4">
+                            <div class="d-flex justify-content-center mt-3">
+                                <iframe width="315" height="520" src="https://youtube.com/embed/T5o0YwMtjS8?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-4 ms-3">
+                            <div class="d-flex justify-content-center mt-3">
+                                <iframe width="315" height="520" src="https://youtube.com/embed/KZszIV5AU2Q?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    <h4 class="fw-bold mt-5">Open Loop Control</h4> 
+                    <p class="fw-light">
+                        Finally, I implemented an open loop set of commands, for a preprogramed path. 
+                    </p>
+                    <div class="row mt-1">
+                        <div class="col-6 pe-4">
+                            <div class="my-4 px-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                                <script src="https://gist.github.com/oesarpong/96bbf607474397aa2b20f459af09b139.js"></script>                            
+                            </div> 
+                        </div>
+                        <div class="col-6 pe-5">
+                            <div class="d-flex justify-content-center mt-3">
+                                <iframe width="315" height="560" src="https://youtube.com/embed/w_XbOr9Koos?si=RPrZnJ9DZaCZJYm8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="fw-bolder mt-5">References</h2> <hr style="margin-top: 0;">
+                    <div class="fw-light">
+                        <p>
+                            <span class="fw-medium fst-italic">ChatGPT:</span> Served as valuable resource for programming in C and html. This AI did not serve to be useful for developing logic and algorithim.
+                            Rather it was used for finding function documentation and aquiring knowledge for unknown built-in functions. This was useful when searching for documentation and configuration of the hardware.
+                        </p>
+                        <p>
+                            <span class="fw-medium fst-italic">Wenyi Wu Webpage:</span> Referenced webpage for inspriation and lap report guidance 
+                        </p>
+                        <p><span class="fw-medium fst-italic">Nila Narayan Webpage:</span> Referenced webpage for support and an additional approach for the lab writeup.</p>
+                    </div>
+            </div>
 
 
     <!-- Bootstrap core JS-->
