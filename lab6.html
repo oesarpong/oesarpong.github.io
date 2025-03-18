@@ -76,15 +76,14 @@
             <div class="col-12 col-md-9 bg-white overflow-y-scroll px-5 " style="height: 125vh;">
                 <div class="d-flex flex-column ms-2 text-darkt">
                     <h1 class="text-capitalize fw-bolder mt-3">
-                        <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 5: Linear PID control and Linear interpolation</span>
+                        <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 6: Orientation PID</span>
                     </h1>
                     <h2 class="fw-bolder mt-5">Introduction</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
-                        The purpose of this lab was to gain exeriencing implement a PID controller. The controller will determine the response of the robot
-                        as it drives toward a wall, ideally stoping at a target/setpoint. 
+                      ...
                     </p>
-                    <h2 class="fw-bolder mt-5">Greetings from Chicago!</h2> <hr style="margin-top: 0;">
-                    <div class="row">
+                    <h2 class="fw-bolder mt-5">Greetings from South Africa!</h2> <hr style="margin-top: 0;">
+                    <!-- <div class="row">
                         <div class="col-4 d-flex justify-content-center">
                             <img class="img-fluid align-self-center " src="assets/lab5/IMG_5011 2.JPG" alt="...">
                         </div>
@@ -110,7 +109,7 @@
                         the time needed to send over data from the iteration time of the controller.
                     </p>
                     <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/94057b41574db1d56eb06a75cbdcbac7.js"></script>                    
+                        <script src="https://gist.github.com/oesarpong/94057b41574db1d56eb06a75cbdcbac7.js"></script>
                     </div> 
                     <p class="fw-light">
                         The data is recieved by my laptop via 
@@ -128,7 +127,7 @@
                         This function is set to run for about 5 seconds, or until the robot remains in the same position for a set amount of time.
                     </p>
                     <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 60vh; overflow: auto;border: 1px solid rgb(41, 40, 40);">
-                        <script src="https://gist.github.com/oesarpong/51dcc64db6ae65bac883402b75dd5dc7.js"></script>                    
+                        <script src="https://gist.github.com/oesarpong/51dcc64db6ae65bac883402b75dd5dc7.js"></script>                   
                     </div> 
                     <h5 class="fw-bold mt-3"><small>Helper Functions</small></h4> 
                     <p class="fw-light">
@@ -298,8 +297,8 @@
                     <h2 class="fw-bolder mt-5">Extrapolation Discussion</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
                         One of the largest limiting factors in this controller is the ToF's ranging time. Moreover, the effectiveness of the controller is dependent on the sampling rate in order to update the inputs as fast as possible. 
-                        In order to speed up the sampling rate of the controller, it is encouraged to decouple its frequency from the sensor. Fortunately, this is something that I did in a previous lab by the using the last known data point of the ToF sensor wasn't ready when recording all sensor data. 
-                        Alternatively, now to speed up the controller I isolated the measured data to only the front ToF sensor and used the linear extrapolation to predict new data. 
+                        In order to speed up the sampling rate of the controller, it is encouraged to decoupled its frequency from the sensor via linear extrapolation. Fortunately, this is something that I did in a previous lab by the using the last known data point if the ToF sensor wasn't ready. 
+                        Therefore to speed up the controller, I isolated the gathered data to only the front ToF sensor and used the following formula to linearize the data. 
                     </p>
                     <div class="d-flex justify-content-center mt-1 mb-3">
                         <img class="img-fluid align-self-center w-25" src="assets/lab5/extrap.png" alt="...">
@@ -310,22 +309,14 @@
                     </div> 
                     <h5 class="fw-bold mt-3">Dicussion</h5> 
                     <p class="fw-light">
-                        By using linear extrapolation, I estimated the robot's distance to the wall using the last two available datareadings and "dt".
-                        Effectively, this will return a useful reading to the controller, even if the distance sensor is not ready. Finally, I used the whole response time to calculate the sampling rate and compared this to the old one.
+                        By using linear extrapolation, I estimate the robot's distance to the wall using the last two available datareadings and "dt".
+                        Effectively, this always returns a useful reading to the controller, even if the distance sensor is not ready. Practically, my sensor was always ready and didn't need to relay on older data. 
                     </p>
-                    <div class="d-flex justify-content-center mt-1 mb-3">
-                        <img class="img-fluid align-self-center w-50" src="assets/lab5/extra1.png" alt="...">
-                    </div> 
-                    <p class="fw-light fst-italic text-center">Note: "1 Out" = Sensor was Ready</p>
                     <p class="fw-light text-center">
-                        <span class="fw-medium">Old Controller Samplinextrapg Rate:</span>: 53 1/s ~ 18.86 ms
+                        <span class="fw-medium">Old Controller Sampling Rate:</span>: 65.3 1/s ~ 15.31 ms
                     </p>
                     <p class="fw-light text-center">
                         <span class="fw-medium">New Controller Sampling Rate:</span>: 126 1/s ~ 7.91 ms
-                    </p>
-                    <p class="fw-light">
-                        The expectation was that the sensor would have issues reading at longer distances, but in my tests
-                        the sensor rarely needed to rely on old data (see output below). I believe that the time saved between controllers came from isolating the recorded data to jut the ToF sensor, considering it was already decoupled from the controller.
                     </p>
  
                     
@@ -346,8 +337,8 @@
                         </ul>
                         <p>
                             <span class="fw-medium fst-italic">MathWorks: Understanding PID Control </span> - https://www.mathworks.com/videos/series/understanding-pid-control.html
-                        </p>
-                    </div>
+                        </p>-->
+                    </div> 
             </div>
 
 
