@@ -78,11 +78,6 @@
                     <h1 class="text-capitalize fw-bolder mt-3">
                         <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 5: Linear PID control and Linear interpolation</span>
                     </h1>
-                    <h2 class="fw-bolder mt-5">Introduction</h2> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        The purpose of this lab was to gain exeriencing implement a PID controller. The controller will determine the response of the robot
-                        as it drives toward a wall, ideally stoping at a target/setpoint. 
-                    </p>
                     <h2 class="fw-bolder mt-5">Greetings from Chicago!</h2> <hr style="margin-top: 0;">
                     <div class="row">
                         <div class="col-4 d-flex justify-content-center">
@@ -96,6 +91,11 @@
                         </div>
                     </div>
                     <p class="fw-light text-center fst-italic"> 2025 NSBE Annual Convention</p>
+                    <h2 class="fw-bolder mt-5">Introduction</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        The purpose of this lab was to gain exeriencing implement a PID controller. The controller will determine the response of the robot
+                        as it drives toward a wall, ideally stoping at a target/setpoint. 
+                    </p>
                     <h2 class="fw-bolder mt-5">Prelab</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
                          To begin, I decided to setup my workflow and test to accomdate a reiterative procedure for tweaking gain controllers as well as debugging. To do this, I needed to establish a strong bluetooth connection
@@ -109,14 +109,14 @@
                         the "U" input and the position of the car would change over time. I made this a seperate callable command in order to decouple 
                         the time needed to send over data from the iteration time of the controller.
                     </p>
-                    <div class="my-4 px-4 mx-5 align-self-center" style="max-height: 40vh; overflow: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                    <div class="my-4 px-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
                         <script src="https://gist.github.com/oesarpong/94057b41574db1d56eb06a75cbdcbac7.js"></script>                    
                     </div> 
                     <p class="fw-light">
                         The data is recieved by my laptop via 
                         <span class="fst-italic fw-medium" style="color: tomato;">control_handler()</span>. 
                     </p>
-                    <div class="my-4 px-4 mx-5 align-self-center" style="max-height: 50vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                    <div class="my-4 px-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
                         <script src="https://gist.github.com/oesarpong/bfffe95a8000731a9ae0a6198744da5c.js"></script>                   
                     </div> 
                     <h5 class="fw-bold mt-3">Implementation</h4> 
@@ -127,7 +127,7 @@
                         run only after being called which would reduce the looping time of my controller.
                         This function is set to run for about 5 seconds, or until the robot remains in the same position for a set amount of time.
                     </p>
-                    <div class="my-4 px-4 mx-5 align-self-center" style="max-height: 60vh; overflow-y: auto;border: 1px solid rgb(41, 40, 40);">
+                    <div class="my-4 px-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
                         <script src="https://gist.github.com/oesarpong/51dcc64db6ae65bac883402b75dd5dc7.js"></script>                    
                     </div> 
                     <h5 class="fw-bold mt-3"><small>Helper Functions</small></h4> 
@@ -135,21 +135,21 @@
                         <span class="fst-italic fw-bold" style="color: tomato;">Ctrl_tofReading()</span>:
                         returns data from the ToF Sensor. Iterates only through the controller data arrays
                     </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-width: 100vh; max-height: 45vh; overflow: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                    <div class="my-4 px-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
                         <script src="https://gist.github.com/oesarpong/fd33661ee6533cf5417443d901e88c78.js"></script>                    
                     </div> 
                     <p class="fw-light">
                         <span class="fst-italic fw-bold mt-3" style="color: tomato;">Scale_u()</span>:
                         Clamps "U" output to a user defined limit. Accounts for deadband where motor to ensure the motor overcomes loses/damping.
                     </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 35vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                    <div class="my-4 px-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
                         <script src="https://gist.github.com/oesarpong/24d8255c6cb554d886b995d4a1eeed7b.js"></script>
                     </div> 
                     <p class="fw-light">
                         <span class="fst-italic fw-bold mt-3" style="color: tomato;">Denoise_d()</span>:
                         Filters the noise from derivative term. 
                     </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 45vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                    <div class="my-4 px-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
                         <script src="https://gist.github.com/oesarpong/a01c231601e862b0d651f3718f994ec6.js"></script>                    
                     </div> 
 
@@ -217,7 +217,7 @@
                     <h5 class="fw-bold mt-3">Discussion</h5> 
                     <p class="fw-light">
                         To my surprise, the PI controller didn't work completely as expected. I tried adjusting the gains and ended up settling at a Ki = 0.005. Interestingly enough the overshoot decreased and the steady state 
-                        error increased. The integrator appeared havig a large contribution pushing the system farther away from the setpoint. Ultimately, the results did not go to waste. I decided that I would tackle the overshoot first and come back to the steady state error later.  
+                        error increased. The integrator appeared to have a large contribution pushing the system farther away from the setpoint. Ultimately, the results did not go to waste. I decided that I would tackle the overshoot first and come back to the steady state error later.  
                     </p>
                     <h4 class="fw-bold mt-3">PID Controller</h4> <hr style="margin-top: 0;">
                     <p class="fw-light">
@@ -245,7 +245,8 @@
                         saturated which led me to believe that the KI gain was just too high and I gave up a bit too soon. 
                     </p>
                     <div class="d-flex justify-content-center mt-3">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/-huM8-CUurY?si=QJoEHkLAa-sO2NG7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Eqrn2ATOtE0?si=wXZkcPU619bICyYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    
+                    </div>                
                     </div> 
                     <div class="d-flex justify-content-center mt-3">
                         <img class="img-fluid align-self-center w-75" src="assets/lab5/PID_Control_PWM_2.png" alt="...">
@@ -268,7 +269,7 @@
                     </p>
                     <h5 class="fw-bold mt-3">System Response</h5> 
                     <div class="d-flex justify-content-center mt-3">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Eqrn2ATOtE0?si=wXZkcPU619bICyYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div> 
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/-huM8-CUurY?si=QJoEHkLAa-sO2NG7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>     
                     <div class="d-flex justify-content-center mt-5">
                         <img class="img-fluid align-self-center w-75" src="assets/lab5/Final_Control_PWM.png" alt="...">
                     </div> 
