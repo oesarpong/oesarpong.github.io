@@ -78,246 +78,159 @@
                     <h1 class="text-capitalize fw-bolder mt-3">
                         <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 6: Orientation PID</span>
                     </h1>
+                    <h2 class="fw-bolder mt-5">Greetings from South Africa!</h2> <hr style="margin-top: 0;">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img class="img-fluid align-self-center w-50" src="assets/lab6/92ccf1ec-178d-4b0d-8f2d-24db2959db63.JPG" alt="...">
+                        </div>
+                    </div>
                     <h2 class="fw-bolder mt-5">Introduction</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
-                      ...
+                      The purpose of this lab is to continue gaining experience with PID Controllers. In this lab, we aim to control the orientation of the robot using the IMU sensor. The main focus will be on stationary (in place)
+                      orientation control.
                     </p>
-                    <h2 class="fw-bolder mt-5">Greetings from South Africa!</h2> <hr style="margin-top: 0;">
-                    <!-- <div class="row">
-                        <div class="col-4 d-flex justify-content-center">
-                            <img class="img-fluid align-self-center " src="assets/lab5/IMG_5011 2.JPG" alt="...">
-                        </div>
-                        <div class="col-4 d-flex justify-content-center">
-                            <img class="img-fluid align-self-center " src="assets/lab5/IMG_B1CC2F2A3199-1.jpeg" alt="...">
-                        </div>
-                        <div class="col-4 d-flex justify-content-center">
-                            <img class="img-fluid align-self-center " src="assets/lab5/IMG_5024 2.JPG" alt="...">
-                        </div>
-                    </div>
-                    <p class="fw-light text-center fst-italic"> 2025 NSBE Annual Convention</p>
-                    <h2 class="fw-bolder mt-5">Prelab</h2> <hr style="margin-top: 0;">
+                    <h2 class="fw-bolder mt-5">Prelab - Data Processing</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
-                         To begin, I decided to setup my workflow and test to accomdate a reiterative procedure for tweaking gain controllers as well as debugging. To do this, I needed to establish a strong bluetooth connection
-                         in order to send the system inputs and recieving the sensor data to interpret it's response. Below is a summary of the final code used to accomplish this. 
-                    </p>
-                    <h5 class="fw-bold mt-3">Data Processing</h5> 
-                    <p class="fw-light">
-                        To start I created data arrays to store about 5 seconds worth of data and created a command 
-                        <span class="fst-italic fw-bold" style="color: tomato;">GET_PID_DATA</span>. 
-                        I am mainly interested in how 
-                        the "U" input and the position of the car would change over time. I made this a seperate callable command in order to decouple 
-                        the time needed to send over data from the iteration time of the controller.
+                        To begin the lab, I established a method for sending and receiving data and commands in order to send control inputs and debug the robot from my labtop. Similar to the previous lab, I set up several 
+                        arrays to record the relevant data I wanted to monitor on my laptop. Only a few iterations were made to accomadate a new type of controller. See code below.
                     </p>
                     <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/94057b41574db1d56eb06a75cbdcbac7.js"></script>
-                    </div> 
-                    <p class="fw-light">
-                        The data is recieved by my laptop via 
-                        <span class="fst-italic fw-medium" style="color: tomato;">control_handler()</span>. 
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 50vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/bfffe95a8000731a9ae0a6198744da5c.js"></script>                   
-                    </div> 
-                    <h5 class="fw-bold mt-3">Implementation</h4> 
-                    <p class="fw-light">
-                        Next, I created another command, 
-                        <span class="fst-italic fw-bold" style="color: tomato;">POS_CONTROLLER</span>.
-                        ,to fill these arrays based on a user input of the setpoint and gain values. Additionally, I decided not to add this function into the main loop, but have it 
-                        run only after being called which would reduce the looping time of my controller.
-                        This function is set to run for about 5 seconds, or until the robot remains in the same position for a set amount of time.
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 60vh; overflow: auto;border: 1px solid rgb(41, 40, 40);">
-                        <script src="https://gist.github.com/oesarpong/51dcc64db6ae65bac883402b75dd5dc7.js"></script>                   
-                    </div> 
-                    <h5 class="fw-bold mt-3"><small>Helper Functions</small></h4> 
-                    <p class="fw-light">
-                        <span class="fst-italic fw-bold" style="color: tomato;">Ctrl_tofReading()</span>:
-                        returns data from the ToF Sensor. Iterates only through the controller data arrays
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-width: 100vh; max-height: 45vh; overflow: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/fd33661ee6533cf5417443d901e88c78.js"></script>                    
-                    </div> 
-                    <p class="fw-light">
-                        <span class="fst-italic fw-bold mt-3" style="color: tomato;">Scale_u()</span>:
-                        Clamps "U" output to a user defined limit. Accounts for deadband where motor to ensure the motor overcomes loses/damping.
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 35vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/24d8255c6cb554d886b995d4a1eeed7b.js"></script>
-                    </div> 
-                    <p class="fw-light">
-                        <span class="fst-italic fw-bold mt-3" style="color: tomato;">Denoise_d()</span>:
-                        Filters the noise from derivative term. 
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 45vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/a01c231601e862b0d651f3718f994ec6.js"></script>                    
-                    </div> 
-
-                    <h2 class="fw-bolder mt-5">Positional Control</h2> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        This section will cover the process that I used toward my final controller gains/inputs. The functions and algoirthims used 
-                        during this process can be referenced in the <span class="fw-medium"> Prelab</span>, unless otherwise embedded. The first set of controls, are  defined with a speed clamped to 25% of the max. This was done just to
-                        prevent any excessive collisions of the robot into the wall (see <span class="fst-italic fw-medium" style="color: tomato;">scale_u()</span>). 
-                    </p>
-                    <h5 class="fw-bold mt-3 text-center text-decoration-underline"><small>High Level Controller Goals</small></h4> 
-                        <ul class="list-group-numbered text-center">
-                            <li class="list-group-item align-self-center">Setpoint: 304mm/1ft</li>
-                            <li class="list-group-item">Effective within Starting Range: 2-4m</li>
-                            <li class="list-group-item">Minimize Settling Time & Overshoot</li>
-                            <li class="list-group-item">Small Overshoot is Allowable</li>
-                            <li class="list-group-item"> < 1% Steady State Error</li>
-                        </ul>
-                    <h4 class="fw-bold mt-3">P Controller</h4> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        I started my design with a P Comtroller.The proportional gain, KP, affects the speed of the controller in reference to the error. It <span class="fw-medium">reflects the ratio between the output and the input</span>. Therefore, I started my controller off with a <span class="fw-medium">KP = 0.085</span>.  
-                        This value is the ratio of the maximum speed input over the median starting position (255/3000m). Ideally, I wanted to ensure that my robot would be running at maximum speed from the start of the command loop.                       
-                    </p>
-                    <p class="fw-light">
-                        For my baseline controller, I 
-                        decided to clamp my speed (using  <span class="fst-italic fw-medium" style="color: tomato;">scale_u()</span> ) at 25% of the max, which would help prevent any incidents or my robot smashing into the wall. Additionally, 
-                        I increased my setpoint to 504mm to allow for a potentially large overshoot (set back in the next section). Below is resulting systems response:
-                    </p>
-                    <h5 class="fw-bold mt-3">System Response</h5>
-                    <div class="d-flex justify-content-center mt-3">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gmXP9I1fh9g?si=RF5u5a34lOpDbONe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div> 
-                    <div class="d-flex justify-content-center mt-5">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/P_Control_PWM.png" alt="...">
-                    </div> 
-                    <div class="d-flex justify-content-center mt-5 mb-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/P_Control_Tof.png" alt="...">
-                    </div> 
-                    <h5 class="fw-bold mt-3">Discussion</h5> 
-                    <p class="fw-light">
-                        This controller, resulted in a large overshoot and a small steady state error after some oscillations. From these results I was able to conclude that 
-                        the proportional served its purpose in speed selection, but would not be enough to meet my goals.
-                    </p>
-
-   
-                    <h4 class="fw-bold mt-3">PI Controller</h4> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        Using the results from the P controller, I added an integrator, Ki, and implement a PI controller. Ki, sums the error over time, eliminating the steady state error if tuned correctly. One of the issues with adding an integrator term is that
-                        you run the risk of "Wind Up" which refers to an over accumlation of error beyond the systems saturation point, resulting in an input greater then the actuators capabilities. To avoid this, 
-                        I added Wind-Up Protection by clamping the integrator term relative to the maximum speed input. See below:
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/f2bd2dad23d926c5dbcc4efd444702c1.js"></script>                    
-                    </div> 
-                    <p class="fw-light">
-                            From here, I attempted to tune the controller until the steady state error was eliminated. 
-                    </p>
-                    <h5 class="fw-bold mt-3">System Response</h5> 
-                    <div class="d-flex justify-content-center mt-3">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/kkDtCxQkG6k?si=aNaQS6DXUrJILnFD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div> 
-                    <div class="d-flex justify-content-center mt-5">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/PI_Control_PWM_1.png" alt="...">
-                    </div> 
-                    <div class="d-flex justify-content-center mt-5 mb-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/PI_Control_Tof_1.png" alt="...">
-                    </div> 
-                    <h5 class="fw-bold mt-3">Discussion</h5> 
-                    <p class="fw-light">
-                        To my surprise, the PI controller didn't work completely as expected. I tried adjusting the gains and ended up settling at a Ki = 0.005. Interestingly enough the overshoot decreased and the steady state 
-                        error increased. The integrator appeared havig a large contribution pushing the system farther away from the setpoint. Ultimately, the results did not go to waste. I decided that I would tackle the overshoot first and come back to the steady state error later.  
-                    </p>
-                    <h4 class="fw-bold mt-3">PID Controller</h4> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        Using the same PI controller gains, I added a derative gain, KD, to increase the sensitivity of my controller to change. KD works best with small "dt", and greatly reduces the overshoot of the system by responding sensitvely to change. 
-                        Conversely, this also can bring some noise into the system which comes from a varying "dt" between loops. I attempted to filter as much noise as possible using <span class="fst-italic fw-medium" style="color: tomato;">denoise_d()</span>. 
-                    </p>
-                    <p class="fw-light">
-                        Curious about the integrator term, I also added a data array and sent it over bluetooth to see how it performed. Below are the results:
-                    </p>
-                    <h5 class="fw-bold mt-3">System Response></h5> 
-                    <div class="d-flex justify-content-center mt-3">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/CHYaSoS9Gvk?si=JWEN8FeIuXgn4now" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <script src="https://gist.github.com/oesarpong/297b6a5918c64a2850bb43ab5b71e549.js"></script>                    
                     </div>
-                    <div class="d-flex justify-content-center mt-5">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/PID_Control_PWM_1.png" alt="...">
-                    </div> 
-                    <div class="d-flex justify-content-center mt-5 mb-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/PID_Control_Tof_1.png" alt="...">
-                    </div> 
-                    <div class="d-flex justify-content-center mt-5 mb-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/PID_Control_Int_1.png" alt="...">
-                    </div> 
+                    <h5 class="fw-bold mt-3">IMU Configuring</h5> 
+                    <p class="fw-light">
+                        The input variable we will be using to control the orientation of the robot is the <span class="fw-medium fst-italic">Yaw</span> of the robot. This variable can be 
+                        measured using the gyroscope on the IMU sensor, but there are a few limitation with direction intgration the sensor data to calculate an estimate for orientation.
+                    </p>
+                    <h6 class="fw-bolder text-decoration-underline text-center mt-2">IMU Limitations</h6>
+                    <div class="fw-light mb-1">
+                        <p class="text-center">- Bias: Rate of Error Propagation</p>
+                        <p class="text-center">- Sampling Rate/Frequency</p>
+                    </div>
+                    <p class="fw-light">
+                        To accomdate these limitations, I decided to use the onboard <span class="fw-bold">Digital Motion Processor (DMP)</span> built into the IMU. The DMP fuses the readings from the IMU's gyroscope, accelerometer,
+                        and magnetometer. 
+                    </p>
+                    <h6 class="fw-bolder text-decoration-underline text-center mt-2">Advantages of Using DMP</h6>
+                    <div class="fw-light mb-1 ">
+                        <p class="text-center">- Error & Drift Correction</p>
+                        <p class="text-center">- Transforms Axes using Rotation Matrix</p>
+                        <p class="text-center">- Capable of Adjusting Initial ODR Rate of 55hz</p>
+                    </div>
                     <p class="fw-light mt-2">
-                        The first attempt went really well resulting in practically no overshoot. However, the steady state error still prevailed. Looking at integrator over time, the term never 
-                        saturated which led me to believe that the KI gain was just too high and I gave up a bit too soon. 
+                        Using the example code as a guide, I implemented the intialization DMP and created a built in function, 
+                        <span class="fst-italic fw-medium" style="color: tomato;">yawDMP()</span>.
+                        that would use this processor to calculate the yaw. The <span class="fw-medium">DMP automatically corrects the bias of the sensor after a couple of seconds</span>. Therefore, in the setup
+                        I added a delay in order to ensure the sensor was calibrated before continuing. Additionally, I slowed the frequency of which it loads the FIFO (in other words stores data) to about 35 Hz, so that it doesn't crash from having a full que. The choice of 35 hz is based on the speed of my controller. 
                     </p>
-                    <div class="d-flex justify-content-center mt-3">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/-huM8-CUurY?si=QJoEHkLAa-sO2NG7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    
-                    </div> 
-                    <div class="d-flex justify-content-center mt-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/PID_Control_PWM_2.png" alt="...">
-                    </div> 
-                    <div class="d-flex justify-content-center mt-1 mb-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/PID_Control_Tof_2.png" alt="...">
-                    </div> 
-                    <div class="d-flex justify-content-center mt-1 mb-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/PID_Control_Int_2.png" alt="...">
-                    </div> 
-                    <h5 class="fw-bold mt-3">Discussion</h5> 
-                    <p class="fw-light">
-                        The PID Controller performed the best accomdating for both speed, overshoot, and steady state error. After reaching a result I was happy with I decided to use this baseline and incrementally increase the speed limit to 100% of the max. 
-                    </p>
-                    <h4 class="fw-bold mt-5">Final Controller</h4><hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        After configuring an acceptable controller, <span class="fw-medium">I incrementally increased the max speed of my system and tuned my gains to accomdate these changes</span>. 
-                        I did this by changing the clamped speed limit, and adjusted Ki/Kd gains to get a similar response as the previous section. Conversely, the proportional gain had an internal max speed as well, so once this was reached I increased the porportional gain to meet my user defined limit.
-                        Once met I could further tune the Kp to maintain max speed for longer. To verify my final gains, <span class="fw-medium">I conducted three trials for the same gains</span> in order to compare the results. 
-                    </p>
-                    <h5 class="fw-bold mt-3">System Response</h5> 
-                    <div class="d-flex justify-content-center mt-3">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Eqrn2ATOtE0?si=wXZkcPU619bICyYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div> 
-                    <div class="d-flex justify-content-center mt-5">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/Final_Control_PWM.png" alt="...">
-                    </div> 
-                    <div class="d-flex justify-content-center mt-5">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/Final_Control_Tof.png" alt="...">
+                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/d06367b7db565ea86961009421c594e0.js"></script>
                     </div>
-                    <div class="d-flex justify-content-center mt-5 mb-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab5/Final_Control_Int.png" alt="...">
+                    <div class="d-flex justify-content-center my-3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_LJeUw5U-Z4?si=EL_0dvWELS3iogOn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                    <h5 class="fw-bold mt-3">Discussion</h5> 
+                    <h2 class="fw-bold mt-3">Implementation</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
-                        In conclusion, the gains I settled with <span class="fw-bold">Kp = 0.15, Ki = 0.0032, Kd = 0.071</span>. With these results, it take my robot about 
-                        1.5 seconds to travel 2500mm which results in a <span class="fw-bold">Speed of 1.67 m/s</span>. 
+                        Now ready to implement this controller, I started by creating a new command 
+                        <span class="fst-italic fw-bold" style="color: tomato;">ORI_CONTROLLER</span> to tell the robot to reach the setpoint using the provided gain values. A notable feature of this 
+                        command is the <span class="fw-medium">consideration of the Yaw's Output Range being between [-180 180]</span>. The target value is therefore <span class="fw-medium">normalized to the robots interpreted orientation</span> 
+                        which will singificantly assist with the error measurement of the PID controller. 
                     </p>
+                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/9ec0e97d98bedc385eee7c0ad1f7a46b.js"></script>
+                    </div>
                     <p class="fw-light">
-                        I personally was satisifed with the results and was glad to see that they were repeatable. This controller prioitizes getting to the setpoint as fast as possible and avoids
-                        overshooting the setpoint. 
+                        This control infromation is plugged straight into 
+                        <span class="fst-italic fw-medium" style="color: tomato;">pidController()</span> which is used to operate only the orientation of the car. This controller is very similar to the positional controller, but 
+                        is updated to constantly store new data in the main loop.
                     </p>
-
-                    <h5 class="fw-bolder mt-3">Contribution of Surface Friction</h5>
-                    <p>
-                        For the final controller, I decided to change the surface that my robot traveled on. My solution was <span class="fw-medium">successful across multiple terrains</span>, with slight variation in response. One of the variations that I found notable was 
-                        the amount of slipping my robot experienced. On carpet there was a useful amount of friction that allowed the robot to stop in place, but on a smooth surface the robot slips and turns. This, in turn, effects the settling time and travel response.
-                    </p>
-
-
-                    <h2 class="fw-bolder mt-5">Extrapolation Discussion</h2> <hr style="margin-top: 0;">
+                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/cbaf419ad871734264b6b5e998dc8051.js"></script>                    
+                    </div>
+                    <h5 class="fw-bold mt-3">Deadband Debugging</h5> 
                     <p class="fw-light">
-                        One of the largest limiting factors in this controller is the ToF's ranging time. Moreover, the effectiveness of the controller is dependent on the sampling rate in order to update the inputs as fast as possible. 
-                        In order to speed up the sampling rate of the controller, it is encouraged to decoupled its frequency from the sensor via linear extrapolation. Fortunately, this is something that I did in a previous lab by the using the last known data point if the ToF sensor wasn't ready. 
-                        Therefore to speed up the controller, I isolated the gathered data to only the front ToF sensor and used the following formula to linearize the data. 
+                        While debugging there was an issue regaring the deadband region prior to the robot actually turning about it's axis. Because the <span class="fw-medium">motors had different damping</span>, one of the motos tends to overcome losses sooner and starts spinning before the other motor. This would 
+                        <span class="fw-medium">cause the car to roll forward instead of spinning as intended</span>. To account for this I created a new scaling function, 
+                        <span class="fst-italic fw-bold" style="color: tomato;">c.scale_a()</span>, which resolved this issue by having the car brake within the deadband region. 
                     </p>
-                    <div class="d-flex justify-content-center mt-1 mb-3">
-                        <img class="img-fluid align-self-center w-25" src="assets/lab5/extrap.png" alt="...">
-                    </div> 
-                    <h5 class="fw-bold mt-3">Code</h5> 
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-width: 85vh; max-height: 50vh; overflow: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/fd33661ee6533cf5417443d901e88c78.js"></script>                    
-                    </div> 
-                    <h5 class="fw-bold mt-3">Dicussion</h5> 
+                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/7d56f991cd7bec00cd4c60acf283e56e.js"></script>                    
+                    </div>
+                    <h2 class="fw-bold mt-3">Stationary Orientation Control</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
-                        By using linear extrapolation, I estimate the robot's distance to the wall using the last two available datareadings and "dt".
-                        Effectively, this always returns a useful reading to the controller, even if the distance sensor is not ready. Practically, my sensor was always ready and didn't need to relay on older data. 
+                        Now I wanted to begin to set up a controller to maintain its intial orientation even when pushed out of place. Referring to the program code above, I began creating a new controller using my previous knowledge of PID Gains from Lab 5.
                     </p>
-                    <p class="fw-light text-center">
-                        <span class="fw-medium">Old Controller Sampling Rate:</span>: 65.3 1/s ~ 15.31 ms
+                    <div class="card fw-light px-3 py-3 ms-3">
+                        <h6 class="fw-bold card-title">PID Controller</h6><hr style="margin-top: 0;">
+                        <p><span class="fw-medium">Proportional</span>: Directly Affects Controller Speed, Proportional to Error</p>
+                        <p><span class="fw-medium">Integral</span>: Integrates Error Overtime, Affects Steady State Error</p>
+                        <p><span class="fw-medium">Derivative</span>: Takes Deriavtive of Error, Senstitive to Change, Noisy, Affects Overshoot</p>
+                    </div>
+                    <h6 class="fw-bolder text-decoration-underline text-center mt-5">High Level Goals/Expectations</h6>
+                    <div class="fw-light">
+                        <p class="text-center">- Minimal Overshoot; Acceptable</p>
+                        <p class="text-center">- < 1% Steady State Error</p>
+                        <p class="text-center">- Repeatablility</p>
+                    </div>
+                    <h5 class="fw-bold mt-3">P Controller</h5> 
+                    <p class="fw-light">
+                        Interested in the initial response of the system, I started off with a Proportional Controller. I selected an intiial Kp value by looking at the ratio between largest magnitudes between the input and output (255 PWM/360 Degrees). This resulted in a Kp equal to 0.71. 
+                        After trying this out, I realized that the robot did not respond as fast as I liked so I increased the proportional gain to <span class="fw-medium">Kp = 1.3</span>. Below are the results. 
                     </p>
-                    <p class="fw-light text-center">
-                        <span class="fw-medium">New Controller Sampling Rate:</span>: 126 1/s ~ 7.91 ms
+                    <h6 class="fw-bold mt-3">System Response</h6> 
+                    <div class="d-flex justify-content-center my-3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/DJViITr3HWI?si=hlvJFe3ZO_3yvaB_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    
+                    </div>
+                    <div class="d-flex justify-content-center mt-5">
+                        <img class="img-fluid align-self-center" src="assets/lab6/ORI_P_Controller_PWM.png" alt="...">
+                    </div>
+                    <div class="d-flex justify-content-center mt-5">
+                        <img class="img-fluid align-self-center" src="assets/lab6/ORI_P_Controller_ANGLE.png" alt="...">
+                    </div>
+                    <h6 class="fw-bold mt-3">Discussion</h6> 
+                    <p class="fw-light">
+                        The P controller performed very well. There is an overshoot of about 30 degrees and a steady state error of about 5 deg. 
+                        Now with an idea of how the system will respond, I added some integral and derivative gains to respond to this. 
                     </p>
+                    <h5 class="fw-bold mt-3">PID Controller</h5> 
+                    <p class="fw-light">
+                        Familiar with PID gains, I decided to jump straight into a full PID controller. After some considerations, I decided that the <span class="fw-medium">underlining priority of this controller is to reach the setpoint</span>. 
+                        I'd like to eliminate as much error as possible, and an <span class="fw-medium">small overshoot along the way is acceptable</span> for this controller. Unlike the positional controller, I don't have an issue of potentially hitting a wall and breaking my 
+                        robot. The only <span class="fw-medium">cost for this is time</span>, which I am willing to spare. Therefore, I tweaked the gains until I reached an acceptable response.
+                    </p>
+                    <h6 class="fw-bold mt-3">System Response</h6> 
+                    <div class="d-flex justify-content-center my-3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gh4fRbzxVTA?si=AbBl7OBGJTLsYXcN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    
+                    </div>
+                    <div class="d-flex justify-content-center mt-5">
+                        <img class="img-fluid align-self-center" src="assets/lab6/ORI_PID_Controller_ANGLE.png" alt="...">
+                    </div>
+                    <div class="d-flex justify-content-center mt-5">
+                        <img class="img-fluid align-self-center" src="assets/lab6/ORI_PID_Controller_PWM.png" alt="...">
+                    </div>
+                    <h2 class="fw-bold mt-3">Step Response Orientation Control</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        After accomplishing stationary controls, I was eager to implement a step response that would change the robots orientation on command. I imagine this to be useful in future lab where we execute localization and planning of a path. 
+                        In order to do this, I would need a large step response to overcome the static friction which was previous eliminated by an external interferance. Therefore, I decided that for an 
+                        error greater then 45% degrees I wanted to be running at max speed to meet the setpoint. In the end, I was looking for a snappy response to the target with a similar response as the above controller. Below are the results. 
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/EpdiXwFcD3w?si=TlQjQz1MmByQSu1o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="d-flex justify-content-center mt-5">
+                        <img class="img-fluid align-self-center" src="assets/lab6/ORI_SET__PID_Controller_PWM.png" alt="...">
+                    </div>
+                    <div class="d-flex justify-content-center mt-5">
+                        <img class="img-fluid align-self-center" src="assets/lab6/ORI_SET_PID_Controller_ANGLE.png" alt="...">
+                    </div>
+                    <h2 class="fw-bold mt-5">Sampling Rate Discussion</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        An notable point of delay for this controller is processing/computing time including that spent managing the elements of data arrays. Using pointers significantly assisted with decreasing my sampling time. Below is a histogram showing the distrubtion of sampling rates recieved by my laptop from the artemis. 
+                        The <span class="fw-medium">average frequency for this controller was about 13.5 ms</span> .
+                    </p>
+                    <div class="d-flex justify-content-center mt-5">
+                        <img class="img-fluid align-self-center w-50" src="assets/lab6/ORI_CONTROLLER_HIST.png" alt="...">
+                    </div>
  
                     
                     <h2 class="fw-bolder mt-5">References</h2> <hr style="margin-top: 0;">
@@ -328,16 +241,15 @@
                         </p>
                         <p>
                             <span class="fw-medium fst-italic">2024 Student Webpages: </span>Referenced as guides and inspiration in developing my own controller. 
-                            Variety served to be useful as this was an open ended porject. Additionally helped troubleshoot by accounting for similar errors.
+                            Variety served to be useful as this was an open ended lab. Additionally, it helped troubleshoot by having accounts for similar errors.
                         </p>
                         <ul class="ms-2 list-group-flush">
                             <li class="list-group-item">1. Kaiyuan Xu Webpage</li>
-                            <li class="list-group-item">2. Wenyi Fu Webpage</li>
                             <li class="list-group-item">2. Nila Narayan</li>
                         </ul>
                         <p>
                             <span class="fw-medium fst-italic">MathWorks: Understanding PID Control </span> - https://www.mathworks.com/videos/series/understanding-pid-control.html
-                        </p>-->
+                        </p>
                     </div> 
             </div>
 
