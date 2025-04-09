@@ -82,37 +82,122 @@
             <div class="col-12 col-md-9 bg-white overflow-y-scroll px-5 " style="height: 125vh;">
                 <div class="d-flex flex-column ms-2 text-darkt">
                     <h1 class="text-capitalize fw-bolder mt-3">
-                        <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 7: Kalman Filter</span>
+                        <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 8: Stunts</span>
                     </h1>
                     <h2 class="fw-bolder mt-5">Introduction</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
-                        In this lab, I implemented a Kalman Filter to supplement the slowly sampled ToF values for modeled estimates, 
-                        in order to speed toward the wall as fast as possible.
+                        In this lab, I aimed to combine all of the learned experience from the other labs by performing a fast stunt.
                     </p>
-                    <h2 class="fw-bolder mt-5">Estimating Drag and Momentum</h2> <hr style="margin-top: 0;">
+                    <h2 class="fw-bolder mt-5">Task A: Flip</h2> <hr style="margin-top: 0;">
                     <p class="fw-light">
-                        In order to implement this Kalman filter, we first need build a model of our system. The model I will be using is a state space model representing 
-                        the scenario where our robot speeds towards a wall. Below is a diagram further explaining this model.
+                        For this stunt, the robot 
+                        will start at a designated line, drive forward as fast as possible, before reaching a wall in which it will perform a flip, and return back 
+                        in the direction of where it came from.
                     </p>
-                    <div class="d-flex justify-content-center mt-5">
-                        <img class="img-fluid align-self-center w-25" src="assets/lab7/statespace.png" alt="...">
+                    <h5 class="fw-bolder mt-5">Programming Algorithim/Logic</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        To accomplish this flip, I divided the problem into two steps: forward and reverse. The robot would run to the setpoint and once this setpoint would actuate the wheels to spin 
+                        in the reverse at full speed. This is a callable command, 
+                        <span class="fw-medium" style="color: tomato;">FLIP</span>(), which is shown below. 
+                    </p>
+                    <div class="my-4 px-5 mx-5 align-self-center" style="border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/bc8f470e2fadfdaeee2d47d9500cbd13.js"></script>
                     </div>
-                    <p class="fw-light mt-5">
-                        To build this state space, I needed to calculate an estimate drag(d) and momentum(m) to create our A and B matrices. 
-                        Drag and momentum can be estimated by analyzing the velocity response at steady state.
+
+                    <h5 class="fw-bolder mt-5">Adjusting Weight Distribution</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        On of the key factors to making the RC Car flip is going to be the center of mass (COM). By adding additional weight to front of the car, I can shift the COM toward the front axis, giving a larger torque about those wheels aiding
+                        in the flipping motion of the car. To do this, I used a lot of nuts and duck tape. Below is the before and after. 
                     </p>
                     <div class="row">
                         <div class="col-6">
-                            <div class="d-flex justify-content-center mt-5">
-                                <img class="img-fluid align-self-center w-75" src="assets/lab7/drag.png" alt="...">
+                            <p class="text-center fw-medium">Before</p>
+                            <div class="d-flex justify-content-center mt-1">
+                                <img class="img-fluid align-self-center w-50" src="assets/lab8/before.JPG" alt="...">
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="d-flex justify-content-center mt-5">
-                                <img class="img-fluid align-self-center w-50" src="assets/lab7/momentum.png" alt="...">
+                            <p class="text-center fw-medium">After</p>
+                            <div class="d-flex justify-content-center mt-1">
+                                <img class="img-fluid align-self-center w-75" src="assets/lab8/after.JPG" alt="...">
                             </div>
                         </div>
                     </div>
+                    <p class="fw-ligh mt-2">
+                        This method actually worked surprisingly well. During my test, I noticed that I did not need to rely as heavily on a grippy surface because there was enough weight to pick the back wheels off of the ground.
+
+                    </p>
+                    <h5 class="fw-bolder mt-5">System Response</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Below is evidence that the stunts worked and graphs showing the sensor data.
+                    </p>
+                    <div class="ms-3 mt-3">
+                        <p class="fw-light">
+                            <span class="fw-bold text-black">Attempt #1 </span><hr style="margin-top: 0;">
+                        </p>
+                        <div class="d-flex justify-content-center my-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/2puSzagF1g0?si=kRBHWLvXAvyKvxEV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-75" src="assets/lab8/stuntIntput2.png" alt="...">
+                        </div>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-75" src="assets/lab8/stuntPos2.png" alt="...">
+                        </div>
+
+                        <p class="fw-light mt-5">
+                            <span class="fw-bold text-black">Attempt #2 </span><hr style="margin-top: 0;">
+                        </p>
+                        <div class="d-flex justify-content-center my-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZaCY-PjnNYw?si=afW4Kyxu624F0T1r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-75" src="assets/lab8/stuntIntput3.png" alt="...">
+                        </div>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-75" src="assets/lab8/stuntPos3.png" alt="...">
+                        </div>
+
+                        <p class="fw-light mt-5">
+                            <span class="fw-bold text-black">Attempt #3 </span><hr style="margin-top: 0;">
+                        </p>
+                        <div class="d-flex justify-content-center my-3">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/assyWYGO5-c?si=ZTypMNJtUV4pZ-D6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+                        </div>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-75" src="assets/lab8/stuntIntput4.png" alt="...">
+                        </div>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-75" src="assets/lab8/stuntPos4.png" alt="...">
+                        </div>
+                    </div>
+                    <h5 class="fw-bolder mt-5">Discussion</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Overall, I believe that the solution I came up with was acceptable. I found the flip task to be easier then the drift task due to simplified trouble shooting, 
+                        seeing as I did not need to adjust any controller but included more open loop commands. In my case, one of the most pivotal features affecting performance
+                        was the <span class="fw-medium">amount of dirt build up on the wheels.</span> The successful attempts shown above were after whiping the wheels off to reduce the amount of slipping 
+                        caused. Therefore, although my results were repeatable there was a signficiant amount of environmental control/intervention that was needed to develop this uniformity. 
+                    </p>
+                    <p class="fw-light">
+                        Another area of interest within these attempts is the setpoint. Based on the graphs, the RC robot was sending inputs to reverse earlier then when it actually flipped and started moving in the desired direction. The TOF sensor data
+                        reaching zero actually shows when the flip started. 
+                        This can be explained by the cars overwhelming momentum which had to be counteracted by an opposing force. Therefore, to get the flip to happen closer to the wall I indulged in a significant
+                        amount of tuning in order to predict where the robot would flip. 
+                    </p>
+                    <p class="fw-light">
+                        Finally, to my surprise, I ended up not using active braking to intiate this flip seeing as <span class="fw-medium">the momentum at a max PWM input would still overcome the holding torque</span> applied to the motors. Therefore in the 
+                        priority of speed, the method I chose can be described as a rotation assist which aids the car in making the flip after an abrupt change in inputs that would raise the rear of the car. 
+                    </p>
+
+                    <h5 class="fw-bolder mt-5">Bloopers</h5> <hr style="margin-top: 0;">
+                    <div class="d-flex justify-content-center my-3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/W9so4uQhtmw?si=mEw7IRW6dbE94abz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                     <div class="d-flex justify-content-center my-3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/assyWYGO5-c?si=ZTypMNJtUV4pZ-D6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+                    </div>
+
+
+
+<!-- 
                     <p class="fw-light mt-5">
                         To do this, I drove the robot at a constant motor speed and logged the input U and the distance readings. In order to create a model that could accomdate my positonal controller,
                         I choose an <span class="fw-medium">PWM value of 255</span> to match what was used in Lab 5. Below are the results of this step response.
@@ -257,7 +342,7 @@
                     <p class="fw-light">
                         Due to limited time, I ended up settling for a satisfactory solution. Comparing my Kalman filter to the Tof data, I think I would prefer my Tof data which now returns new values much quicker then before.
                         I intend to recreate a better model of my system and reinstate a better Kalman Filter that better predicts the distance measurements and smooths out my response.
-                    </p>
+                    </p> -->
                     <h2 class="fw-bolder mt-5">References</h2> <hr style="margin-top: 0;">
                     <div class="fw-light">
                         <p>
@@ -265,16 +350,14 @@
                             Rather it was used for finding function documentation and aquiring knowledge for unknown built-in functions. This was useful when searching for documentation and configuration of the hardware.
                         </p>
                         <p>
-                            <span class="fw-medium fst-italic">2024 Student Webpages: </span>Referenced as guides and inspiration in developing my own controller. 
-                            Variety served to be useful as this was an open ended lab. Additionally, it helped troubleshoot by having accounts for similar errors.
+                            <span class="fw-medium fst-italic">2024 Student Webpages: </span>Referenced as guides and inspiration in developing my own solution. 
+                            dditionally, it helped troubleshoot by having accounts for similar errors.
                         </p>
                         <ul class="ms-2 list-group-flush">
-                            <li class="list-group-item">1. Kaiyuan Xu Webpage</li>
-                            <li class="list-group-item">2. Wenyi Fu</li>
-                            <li class="list-group-item">3. Aidan McNay</li>
+                            <li class="list-group-item">1. Wenyi Fu</li>
                         </ul>
                         <p>
-                            <span class="fw-medium fst-italic">MathWorks: Tuning Kalman Filter </span> - https://www.mathworks.com/help/fusion/ug/tuning-kalman-filter-to-improve-state-estimation.html
+                            <span class="fw-medium fst-italic">2025 Student Collaborations: </span> Tyler Wisniewski, Kelvin Resch, Rachel Arena
                         </p>
                     </div>
             </div> 
