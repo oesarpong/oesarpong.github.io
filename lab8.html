@@ -64,6 +64,9 @@
                                         <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab8.html';">
                                             Lab 8: Stunts
                                         </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab9.html';">
+                                            Lab 9: Mapping
+                                        </button> 
                                     </div>
                                 </li>
                             </ul>
@@ -195,154 +198,6 @@
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/assyWYGO5-c?si=ZTypMNJtUV4pZ-D6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
                     </div>
 
-
-
-<!-- 
-                    <p class="fw-light mt-5">
-                        To do this, I drove the robot at a constant motor speed and logged the input U and the distance readings. In order to create a model that could accomdate my positonal controller,
-                        I choose an <span class="fw-medium">PWM value of 255</span> to match what was used in Lab 5. Below are the results of this step response.
-                    </p>
-                    <div class="d-flex justify-content-center my-3">
-                        <img class="img-fluid align-self-center" src="assets/lab7/stepResponse.png" alt="...">
-                    </div>
-                    <p class="fw-light">
-                        Now with an initial response, I zoomed in on the useful areas of data of which the PWM input is 255 and the robot is reaching steady state. Next, I used this distance data to derive the velocity response.  
-                    </p>
-                    <div class="d-flex justify-content-center my-3">
-                        <img class="img-fluid align-self-center" src="assets/lab7/zoomStepResponse.png" alt="...">
-                    </div>
-                    <h5 class="fw-bolder mt-5">Interpreting Noise in Velocity Data</h5> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        The velocity derivation produced very noisy results which made it difficult to interpret the system's response. I spent a significant amount of time attempting to understand 
-                        why this was the case. I use this space to offer a few theories as to what is going on:
-                    </p>
-                    <ol class="list-group-item fw-light ms-3">
-                        <li class="list-group-item">
-                            <span class="fw-bold text-black">Tof Integration Time: </span>
-                            <p class="fw-light">
-                                The step-like response of the distance values are caused by the slow integration time of the sensors leading to 
-                                the same measurements being output. This results in a velocity of 0, which I filtered out of the above figure. To decrease the lengths of these steps, 
-                                I reduced the intermeasurement time to be closer to the timing budget of the sensor. 
-                            </p>
-                        </li>
-                        <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                            <script src="https://gist.github.com/oesarpong/b8bf25aa8edd3afa95b1bf67ed25d8be.js"></script>                            
-                        </div>
-                        <li class="list-group-item">
-                            <span class="fw-bold text-black">Looping Time: </span>
-                            <p class="fw-light">
-                                Some noise is genuinely to be expected as each looping time between recorded measurements will have some variance. There are numerous factors that could be affecting 
-                                this variation which can go come from EMI to physical disturbance like overheating. 
-                            </p>
-                        </li>
-                    </ol>
-                    <p class="fw-light">
-                        In response to the noisy data, I decided to fit a line to the velocity and derive the needed values in order to calculate the drag and the momentum. This approach yielded 
-                        the following estimates: 
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/241f2a7634499fde963aeb306f69b12e.js"></script>
-                    </div>
-                    <p class="fw-bold text-black text-center"><span class="fw-medium"> d = 6.953e-05</span> ,  <span class="fw-medium">m = 8.97e-06</span>
-                    </p>
-
-                    <h2 class="fw-bolder mt-5">Initializing Kalman Filter in Python</h2> <hr style="margin-top: 0;">
-                    <p class="fw-light my-3">
-                        Now with values of d and m, I derived my A, B, C matrices using the model provided above. After this I discretized the matrices using the sampling rate of my 
-                        data which was <span class="fw-medium">dt = 0.007 ms</span>.
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/ffa90fcf553a19fde20ea2685fff3484.js"></script>
-                    </div>
-                    <div class="d-flex justify-content-center my-3">
-                        <img class="img-fluid align-self-center w-25" src="assets/lab7/matrices.png" alt="...">
-                    </div>
-                    <p class="fw-light my-3">
-                        Additionally, I needed to describe the variance and noise of both my model and the measured data. This will be used to determine the weight of trust I put in my predicted model
-                        versus the measurements. I determined my process noise to be dependent on the sampling rate and I chose a measurement noise of <span class="fw-medium">20 mm</span> which is the listed uncertainity
-                        from the datasheet of the distance sensors. Finally, I can use these values to initialize my kalman filter (KF). The function for the KF was gathered from the in class lecture notes. 
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/666b4c266bdcab4e063608534e11265c.js"></script>                    
-                    </div>
-                    <h2 class="fw-bolder mt-5">Testing Kalman Filter in Python</h2> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        To sanity check the parameters, I first implemented my KF in python to see the results. I compared my filter to the straight run tested used to approximate the data from 
-                        the system. Below is an intial plot of the KF output demonstrating how it performed.
-                    </p>
-                    <div class="d-flex justify-content-center my-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab7/KF_inital.png" alt="...">
-                    </div>
-                    <p class="fw-light">
-                        Generally, the KF performed well given the original data. We can see a bit more deviance towards the beginning and then
-                        the results converge closer to our setpoint. The KF makes a prediciton of the response then filters the model using the measured values.
-                    </p>
-                    <h5 class="fw-bolder mt-5">Adjusting Variance</h5> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        It is important to consider how different parameters will affect the response of the filter. Below is a brief discussion of my investigation of parameter 
-                        contributions.
-                    </p>
-                    <div class="ms-3">
-                        <h6 class="fw-bolder">Measurement Noise</h6>
-                        <p class="fw-light mt-2">
-                            "Sigma 3" refers to uncertainity of the measured data. When we indicate that there's a singificant amount of noise the filter will favor the model suggesting that the measurements
-                            are inaccurate. Conversely, as shown below, if there is little noise then the KF will line up almost perfectly with the data.  
-                        </p>
-                        <div class="d-flex justify-content-center my-3">
-                            <img class="img-fluid align-self-center w-75" src="assets/lab7/KF Small Process Noise.png" alt="...">
-                        </div>
-                        <h6 class="fw-bolder">Process Noise</h6>
-                        <p class="fw-light mt-2">
-                            "Sigma 1" and "Sigma 2" refer to the process noise of the model in regards to position and speed. They describe the models uncertaintity from the actual motion of the robot. THe tradeoff is
-                            a low process noise may ignore rapid deviations in the data, but will favor the motion model. Additionally, if we set these terms to zero then we will get a straight line.
-                        </p>
-                        <div class="d-flex justify-content-center my-3">
-                            <img class="img-fluid align-self-center w-75" src="assets/lab7/KF_Trust_Model.png" alt="...">
-                        </div>
-                        <div class="d-flex justify-content-center my-3">
-                            <img class="img-fluid align-self-center w-75" src="assets/lab7/KF No Process Noise.png" alt="...">
-                        </div>
-                    </div>
-                    <h5 class="fw-bolder mt-5">Estimating Unchanged Tof Measurements</h5> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        Before implementing the code on the robot, I was curious toward the performance of my model when the distance sensor had not updated its value. 
-                        I created a new KF function that would predict the next measurement in the case that the ToF sensor was not ready.
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/f59548b0f22837640bfc02efc20735e6.js"></script>                   
-                    </div>
-                    <div class="d-flex justify-content-center my-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab7/Test1_Simulated.png" alt="...">
-                    </div>
-                    <p class="fw-light">
-                        The response seemed to perform well along areas with small changes in measurements. Although, the model didn't know how to respond to large jumps. Nonetheless I was satisifed with the response and moved on to robot implementation.
-                    </p>
-                    <h2 class="fw-bolder mt-5">Implementing Kalman Filter on Robot</h2> <hr style="margin-top: 0;">
-                    <p class="fw-light">
-                        Now with a working solution, I next moved on to robot implementation and imported the algoithims from python to Ardunino.
-                    </p>
-                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 70vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
-                        <script src="https://gist.github.com/oesarpong/722b82b291e7075d50e55779e76f0e41.js"></script>
-                    </div>
-                    <p class="fw-light">
-                        My first attempt at at the kalman fitler was interesting. I noticed that there were large spikes in the data anytime the model substituted unchanged distance measurements for predictions. 
-                        I tried changing the variance parameters to recieve a better estimate but this did not fix this problem. Below are the results.
-                    </p>
-                    <div class="d-flex justify-content-center my-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab7/test_1.png" alt="...">
-                    </div>
-                    <p class="fw-light">
-                        After adjusting parameters for some time, I concluded that the issue actually may be found in my prediciton for the motion model. Considering the noise in my velocity response, 
-                        my fit could have easily been an overshoot of the actual velocity of my system. Therefore, I adjusted my values for d and m using smaller approximations from my velocity data.
-                        After doing this I was able to reduce the spikes in my data which I believe to be a result of an over-estimate of the robots velocity.
-                    </p>
-                    <div class="d-flex justify-content-center my-3">
-                        <img class="img-fluid align-self-center w-75" src="assets/lab7/worthyfinal.png" alt="...">
-                    </div>
-                    <p class="fw-light">
-                        Due to limited time, I ended up settling for a satisfactory solution. Comparing my Kalman filter to the Tof data, I think I would prefer my Tof data which now returns new values much quicker then before.
-                        I intend to recreate a better model of my system and reinstate a better Kalman Filter that better predicts the distance measurements and smooths out my response.
-                    </p> -->
                     <h2 class="fw-bolder mt-5">References</h2> <hr style="margin-top: 0;">
                     <div class="fw-light">
                         <p>

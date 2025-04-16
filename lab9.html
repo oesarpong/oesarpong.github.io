@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fast Robots Student Website</title>
+    <meta name="description" content=" add later" />
+    <meta name="author" content=" Ethan Sarpong" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Responsive Navbar-->
+    <nav class="navbar navbar-expand-lg px-3 bg-dark sticky-top" style=" z-index: 1000; width:100%; height: 3rem;">
+        <a class="navbar-brand text-white"> <p class="h4"> <span class="fw-bold "style = "color:tomato;"> MAE 4190 </span> Fast Robots</p> </a>
+    </nav>
+    <!-- Main Grid Layout -->
+    <div class="container-xs px-3 my-3 ">
+        <div class="row">
+            <!-- Side Column -- About Me + Navigation -->
+            <div class="col-12 col-md-3 text-md-center px-4">
+                <div class="overflow-y-auto container-md bg-white" style= "max-height: 100%;">
+                    <header class ="container d-md-none">  
+                        <a><h1 class="text-capitalize"><span class="fw-bold" style="color:tomato;">Welcome!</span></h1>
+                        <div class="w-100"></div> <h3 class="fw-bold text-dark text-wrap text-justify"> Student Fast Robots Course Webpage</h3></a>
+                    </header>
+                    <!-- About Card-->
+                    <div class="shadow bg-dark-subtle mx-1 rounded">
+                        <div class="card bg-dark py-3 px-3 mx-0 mt-3 align-items-center text-light ">
+                            <img src="assets/profile.jpg" class= "img-fluid d-none d-md-block rounded-circle " alt="..."  style = "width: 75%; height: 75%;">
+                            <img src="assets/profile.jpg" class= "img-fluid d-md-none rounded-circle " alt="..."  style = "width: 50%; height: 50%;">
+                            <h3 class="card-title fw-bolder text-center my-2 px-3"> Ethan Sarpong</h3>
+                            <h6 class="card-title text-center px-3" style="color: rgb(173, 173, 173);"> Mechanical Engineer | eos29</h6>
+                            <ul class="nav nav-underline">
+                                <li class="nav-item justify-content-center">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <button class="btn px-5 btn-outline-light my-1 fw-medium" type="button" onclick="window.location.href='index.html';">
+                                            Homepage
+                                        </button>       
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab1.html';">
+                                            Lab 1: Artemis & Bluetooth
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab2.html';">
+                                            Lab 2: IMU Sensor
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab3.html';">
+                                            Lab 3: ToF Sensor
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab4.html';">
+                                            Lab 4: Motors and Open Loop Control
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab5.html';">
+                                            Lab 5: PID Control/Interpolation
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab6.html';">
+                                            Lab 6: Orientation Control
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab7.html';">
+                                            Lab 7: Kalman Filtering
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab8.html';">
+                                            Lab 8: Stunts
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab9.html';">
+                                            Lab 9: Mapping
+                                        </button> 
+                                    </div>
+                                </li>
+                            </ul>
+                            <footer class="pt-1 pb-2 my-3">
+                                <div class="container">
+                                    <h3 class=""><span class="fw-bold" style="color:tomato;">Contact Information<span></h3>
+                                    <p class="fw-medium">Email: <span class="fw-light">eos29@cornell.edu</span></p>
+                                    <p class="fw-medium lh-1">LinkedIn: <small><a class="link-opacity-10-hover" href="https://www.linkedin.com/in/ethan-sarpon/">https://www.linkedin.com/in/ethan-sarpon/</a></small></p>
+                                </div> 
+                            </footer> 
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <!-- Main Column -- Page Content -->
+            <div class="col-12 col-md-9 bg-white overflow-y-scroll px-5 " style="height: 125vh;">
+                <div class="d-flex flex-column ms-2 text-darkt">
+                    <h1 class="text-capitalize fw-bolder mt-3">
+                        <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 9: Mapping</span>
+                    </h1>
+                    <h2 class="fw-bolder mt-5">Introduction</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        The goal of this lab is to map out a static room, which will later be used for localization and navigation tasks.
+                        This map will be created by placing the robot in several known locations around the room and incrementally rotate while collecting ToF readings.
+                        Assuming all goes well, the result in a map of the following setup.
+                    </p>
+                    <div class="d-flex justify-content-center mt-5">
+                        <img class="img-fluid align-self-center w-50" src="assets/lab9/IMG_5482.jpg" alt="...">
+                    </div>
+
+                    <h2 class="fw-bolder mt-5">Methodology: Orientation Control</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        To accomplish this goal of mapping, I decided to use a PID Orientational Controller to have the robot make 20 degree turns on-axis for a total of 18 setpoints. 
+                        This alorithm will command the robot to retain its pose in accordance to the setpoint while continously logging 
+                        <span class="fst-italic">ToFs and DMP Yaw</span> Sensor Readings. Additionaly the setpoint will be changed periodically within python by sending an updated command. Below is a video of the robots on-axis rotation.
+                    </p>
+                    <div class="d-flex justify-content-center mt-5">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/y4n4Td3W5fE?si=fEP8NBlsIXhsjJp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="container-fluid ms-3">
+                        <span class="fw-bold text-black">Arduino Code </span>
+                        <p class="fw-light">
+                            Below contains function for both <span class="fw-medium">Location Mapping</span> and the <span class="fw-medium">Orientation Controller</span>
+                            which used Kp = 1.8, Ki = 0.0012, Kd = 0.065.
+                        </p>
+                        <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 80vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/6e1d1972c1f27e9581ecc40254db46d4.js"></script>
+                        </div>
+
+                        <span class="fw-bold text-black mt-3">Python Code </span>
+                        <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 60vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/c6fb38ce7e89949a41cb4175a994281c.js"></script>
+                        </div>
+                    </div>
+                    <h5 class="fw-bolder mt-5">Strategic Planning: Two ToF Sensors</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        My setup contains two ToF sensors which are placed in parallel on opposite ends of the car and facing in opposite directions (see Lab 4). 
+                        With this in mind, there are several ways in which this can be used to my advantage. 
+                    </p>
+                    <p class="fw-light ms-3">
+                        <span class="fw-medium">1) Faster Mapping:</span> Instead of rotating the full 360 degrees, I can record the full scope with only a 180 degree turn
+                    </p>
+                    <p class="fw-light ms-3">
+                        <span class="fw-medium">2) Averaged Results:</span> Will complete a 360 degree turn and use both sensor data to improve the accuracy of my model with an averaged estimate
+                    </p>
+                    <p class="fw-light">
+                        Both of these options prove to be useful in different scenarios. For this lab, I decided to use Option 2.
+                    </p>
+                    <h2 class="fw-bolder mt-5"> Mapping Location (-3,-2)</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        To begin, I executed a mapping command for a single location to review the scanned results. 
+                    </p>
+                    <div class="ms-3">
+                        <h5 class="fw-bolder mt-5">PID Controller</h5> <hr style="margin-top: 0;">
+                        <p class="fw-light">
+                            Below is a reflection of how the orientation controller performed during the scan. Considerably, there is an acceptable amount of errors
+                            of about <span class="text-decoration-underline">+</span> 3 degrees.
+                        </p>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-75" src="assets/lab9/PIDsetpoint.png" alt="...">
+                        </div>
+                        <h5 class="fw-bolder mt-5">Polar Map</h5> <hr style="margin-top: 0;">
+                        <p class="fw-light">
+                            The measurements from this scan match up with my expectations. As predicted, the ToF sensors for the rear and front lined up relatively well. 
+                            The points with deviation can be explained by drift when the robot oscillates between the setpoint. By taking multiple scans, I can compensate this drift
+                            by taking an average. 
+                        </p>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-50" src="assets/lab9/polarloc1.png" alt="...">
+                        </div>
+
+                        <h5 class="fw-bolder mt-5">Inertial Reference Frame</h5> <hr style="margin-top: 0;">
+                        <p class="fw-light mt-2">
+                            Next, I converted the polar coordinates into cartesion by using a rotation matrix for the different Tof Sensor & DMP Readings. Below is the code used to convert this data into the 
+                            Inertial Reference Frame of the room along with the results.
+                        </p>
+                        <div class="d-flex justify-content-center my-3">
+                            <img class="img-fluid align-self-center w-50" src="assets/lab9/cartloc1.png" alt="...">
+                        </div>
+                        <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 60vh; overflow-y: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                            <script src="https://gist.github.com/oesarpong/e01a029034e9e99f315f6d20a4b1ea9e.js"></script>
+                        </div>
+                    </div>
+                    <h2 class="fw-bolder mt-5"> Merging Maps of Different Points</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light mb-2">
+                        After proving the concept, it was now time to collect data at several other points.
+                    </p>
+                    <div class="d-flex justify-content-center my-4">
+                        <img class="img-fluid align-self-center " src="assets/lab9/loc(0.0,0.0).png" alt="...">
+                    </div>
+                    <div class="d-flex justify-content-center my-4">
+                        <img class="img-fluid align-self-center " src="assets/lab9/loc(-1524,914).png" alt="...">
+                    </div>
+                    <div class="d-flex justify-content-center my-4">
+                        <img class="img-fluid align-self-center " src="assets/lab9/loc(609,914).png" alt="...">
+                    </div>
+                    <div class="d-flex justify-content-center my-4">
+                        <img class="img-fluid align-self-center " src="assets/lab9/loc(1524,914).png" alt="...">
+                    </div>
+                    <h5 class="fw-bolder mt-5">Discussion on Results/Issues</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Although making a valiant effort to merge these plots, I had a difficult time gathering useful data after my first attempt. One of my time of flight sensors, experienced 
+                        continual freezing issue which caused it to only output the last recorded value. This in term skewed the results of both my sensors returning distance values at different locations 
+                        that were not relevantly proportional. 
+                    </p>
+                    <p class="fw-light">
+                        Additionally, I noticed that each graph was in a slightly different orientation then the other which made it difficult to reorient in post processing. My hypothesis for this breeds from the 
+                        DMP sensor used to calculate yaw. I believe at different locations and altitudes the output angle is affected results in varied results even when physically oriented in the same direction. Below is a 
+                        graph showing the logged setpoints for a few attempts I made.
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-50" src="assets/lab9/angleskew.png" alt="...">
+                    </div>
+                    <h5 class="fw-bolder mt-5">Resolution Considerations</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Due to time, I was unable to complete this lab but figured I'd offer some potential avenues to for future resolution of these results. To begin, I would likely 
+                        offset the Yaw reading for each location to hardset the intial starting position at 0 degrees. Ideally, this will normalize the results across attempts providing easier to compare data. 
+                        In addition, I would reduce the number of distance sensors to just one. Since I complete a 360 degree turn anyway, there was no necessity to use both. This way I avoid, overloading the Artemis by having it switch 
+                        between several sensors. I would also considering checking some of my connections to make sure that the wires are soldered correctly ensure proper current travel. 
+                    </p>
+                    <p class="fw-light">
+                        Finally to reduce some of the translation caused during on axis rotation, I would refine my tunning for my PID controller.
+                    </p>
+
+                    <h2 class="fw-bolder mt-5">References</h2> <hr style="margin-top: 0;">
+                    <div class="fw-light">
+                        <p>
+                            <span class="fw-medium fst-italic">ChatGPT:</span> Served as valuable resource for programming in C and html. This AI did not serve to be useful for developing logic and algorithim.
+                            Rather it was used for finding function documentation and aquiring knowledge for unknown built-in functions. This was useful when searching for documentation and configuration of the hardware.
+                        </p>
+                        <p>
+                            <span class="fw-medium fst-italic">2024 Student Webpages: </span>Referenced as guides and inspiration in developing my own controller. 
+                            Variety served to be useful as this was an open ended lab. Additionally, it helped troubleshoot by having accounts for similar errors.
+                        </p>
+                        <ul class="ms-2 list-group-flush">
+                            <li class="list-group-item">1. Kaiyuan Xu Webpage</li>
+                            <li class="list-group-item">2. Wenyi Fu</li>
+                        </ul>
+                    </div>
+            </div> 
+
+
+    <!-- Bootstrap core JS-->
+        <script src="js/bootstrap.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+
