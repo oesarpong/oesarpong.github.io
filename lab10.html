@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fast Robots Student Website</title>
+    <meta name="description" content=" add later" />
+    <meta name="author" content=" Ethan Sarpong" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Responsive Navbar-->
+    <nav class="navbar navbar-expand-lg px-3 bg-dark sticky-top" style=" z-index: 1000; width:100%; height: 3rem;">
+        <a class="navbar-brand text-white"> <p class="h4"> <span class="fw-bold "style = "color:tomato;"> MAE 4190 </span> Fast Robots</p> </a>
+    </nav>
+    <!-- Main Grid Layout -->
+    <div class="container-xs px-3 my-3 ">
+        <div class="row">
+            <!-- Side Column -- About Me + Navigation -->
+            <div class="col-12 col-md-3 text-md-center px-4">
+                <div class="overflow-y-auto container-md bg-white" style= "max-height: 100%;">
+                    <header class ="container d-md-none">  
+                        <a><h1 class="text-capitalize"><span class="fw-bold" style="color:tomato;">Welcome!</span></h1>
+                        <div class="w-100"></div> <h3 class="fw-bold text-dark text-wrap text-justify"> Student Fast Robots Course Webpage</h3></a>
+                    </header>
+                    <!-- About Card-->
+                    <div class="shadow bg-dark-subtle mx-1 rounded">
+                        <div class="card bg-dark py-3 px-3 mx-0 mt-3 align-items-center text-light ">
+                            <img src="assets/profile.jpg" class= "img-fluid d-none d-md-block rounded-circle " alt="..."  style = "width: 75%; height: 75%;">
+                            <img src="assets/profile.jpg" class= "img-fluid d-md-none rounded-circle " alt="..."  style = "width: 50%; height: 50%;">
+                            <h3 class="card-title fw-bolder text-center my-2 px-3"> Ethan Sarpong</h3>
+                            <h6 class="card-title text-center px-3" style="color: rgb(173, 173, 173);"> Mechanical Engineer | eos29</h6>
+                            <ul class="nav nav-underline">
+                                <li class="nav-item justify-content-center">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <button class="btn px-5 btn-outline-light my-1 fw-medium" type="button" onclick="window.location.href='index.html';">
+                                            Homepage
+                                        </button>       
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab1.html';">
+                                            Lab 1: Artemis & Bluetooth
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab2.html';">
+                                            Lab 2: IMU Sensor
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab3.html';">
+                                            Lab 3: ToF Sensor
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab4.html';">
+                                            Lab 4: Motors and Open Loop Control
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab5.html';">
+                                            Lab 5: PID Control/Interpolation
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab6.html';">
+                                            Lab 6: Orientation Control
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab7.html';">
+                                            Lab 7: Kalman Filtering
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab8.html';">
+                                            Lab 8: Stunts
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab9.html';">
+                                            Lab 9: Mapping
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab10.html';">
+                                            Lab 10: Grid Localization using Bayes Filter
+                                        </button> 
+                                    </div>
+                                </li>
+                            </ul>
+                            <footer class="pt-1 pb-2 my-3">
+                                <div class="container">
+                                    <h3 class=""><span class="fw-bold" style="color:tomato;">Contact Information<span></h3>
+                                    <p class="fw-medium">Email: <span class="fw-light">eos29@cornell.edu</span></p>
+                                    <p class="fw-medium lh-1">LinkedIn: <small><a class="link-opacity-10-hover" href="https://www.linkedin.com/in/ethan-sarpon/">https://www.linkedin.com/in/ethan-sarpon/</a></small></p>
+                                </div> 
+                            </footer> 
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <!-- Main Column -- Page Content -->
+            <div class="col-12 col-md-9 bg-white overflow-y-scroll px-5 " style="height: 125vh;">
+                <div class="d-flex flex-column ms-2 text-darkt">
+                    <h1 class="text-capitalize fw-bolder mt-3">
+                        <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 10: Grid Localization using Bayes Filter</span>
+                    </h1>
+                    <h2 class="fw-bolder mt-2">Introduction</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        The purpose of this lab is to implement grid localization using Bayes Filter with a simulation.
+                    </p>
+                    <h2 class="fw-bolder mt-3">Prelab</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        In this lab we will be implementing the Bayes Filter with a simulation model of a map model from lab 9. 
+                        Before starting the lab, I familiarized myself with the simulation module as well as Bayes Theorem before implementing the code.
+                    </p>
+                    <h5 class="fw-bolder mt-2">Bayes Filter Alorithim</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Bayes Filter is a localization algorithim which determines where a mobile robot is located with respect to it's environment.
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-50" src="assets/lab10/bayes.png" alt="...">
+                    </div>
+                    <p class="fw-light">
+                        The algorithim utilizes Bayes Theorem, Robot-Environment Model, and Markov Assumption. In summary, Bayes Filter begins with a motion model to 
+                        determine an initial belief of its location and pose. We refer to this as the <span class="fw-medium fst-italic">Prediction Step</span> which incorporates the control input data. 
+                    </p>
+                    <p class="fw-light">
+                        Next, it uses sensor data observed from it's enviroment, using a probabilistic sensor model, to correct or adjust the previous belief which is refered to as the <span class="fw-medium">Update Step</span>. The prediction step increases the uncertainty in the belief while the update step 
+                        reduces uncertainity. 
+                    </p>
+                    
+                    <h2 class="fw-bolder mt-3">Implementation</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        The scope of the implementation for this algorithim was completed by filling in the code for the following functions: 
+                        <span class="fw-medium text-capitalize" style="color: tomato;">compute_control()</span>,
+                        <span class="fw-medium text-capitalize" style="color: tomato;">odom_motion_model()</span>,
+                        <span class="fw-medium text-capitalize" style="color: tomato;">prediction_step()</span>, 
+                        <span class="fw-medium text-capitalize" style="color: tomato;">sensor_model()</span>,and
+                        <span class="fw-medium text-capitalize" style="color: tomato;">update_step()</span>.
+                    </p>
+                    <h5 class="fw-bolder mt-2">Compute Control</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        To begin this our implementation, we first want to begin by creating a Odomoetry Motion Model. In order to do this we first need to consider
+                        what our control imput is by comparing our previous pose and current pose. The parameters for our system can be modeled as shown below 
+                        with our input controls describing a change in rotation and translation. 
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-50" src="assets/lab10/Screenshot 2025-04-22 at 22.24.01.png" alt="...">
+                    </div>
+                    <p class="fw-light">
+                        By taking using pose information of two states I reconstructed the relative motion between the robots two states as shown below. It is imporant to note that the angles
+                        have been normalized to meet the robots interpretation range of [-180, 180].
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-75" src="assets/lab10/compute.png" alt="...">
+                    </div>
+                    <h5 class="fw-bolder mt-2">Odomoetry Motion Model</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Next, we can use the function 
+                        <span class="fw-medium text-capitalize" style="color: tomato;">compute_control()</span>
+                        to calculate the actual control input of the robot and compare this to the expected input controls. Additionally, 
+                        we expect there to be a significant amount of noise caused by the environment which will affect our results. Nonetheless, by using the actual and expected 
+                        inputs we can plug this into a Guassion Function to calculate the probaility of the transition of our robot states.
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-75" src="assets/lab10/odom.png" alt="...">
+                    </div>
+                    <p class="fw-light">
+                        In reference to our original algortihim this represents the probaility of our current state given the previous state and a known control input. 
+                    </p>
+                    <h5 class="fw-bolder mt-2">Prediction Step</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        With a motion model now created we can use this function to develop a prediction of our state. This is done by evaluating the probailitic belief across the entire grid. In this prediciton step we estimate where the robot could be by looping through
+                        the beliefs in each pose and comparing this to our odometry model to determine the likelylihood that the robot moved into the respective location. For this grid, there is about 1944 possible states which can result in an extremely long computation time. 
+                        To mitigate these delays, I filter out negligible probabilities that won't yield a large contribution. Addiitonaly, I tried to make my code more efficient by reducing unecessary interium variables. 
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-75" src="assets/lab10/prediction.png" alt="...">
+                    </div>
+                    <p class="fw-light">
+                        Additionally, the belief statements were then normalized to avoid floating point underflow which would propogate from the summation.
+                    </p>
+                    <h5 class="fw-bolder mt-2">Sensor Model</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Next, is the update step which requires sensor data gathered from observing the environment. Similar to the odomoetry model, I calculated the probaility of the sensor data given the current positional observations 
+                        using the guassian function and the sensor variance. 
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-75" src="assets/lab10/sensor_data.png" alt="...">
+                    </div>
+                    <h5 class="fw-bolder mt-2">Update Step</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Finally, we adjust our current belief based on our sensor readings. we multiply the belief from our prediciton step by the probaility of our sensor data taken from a reading of our specific location. 
+                        Finally, this result is normalized and return back to our system memory.
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-75" src="assets/lab10/update_step.png" alt="...">
+                    </div>
+                    <h2 class="fw-bolder mt-3">Results</h2> <hr style="margin-top: 0;">
+                    <div class="d-flex justify-content-center my-2">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Q5qeZ5TklOM?si=xSQTjETnDVYcLL8J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <p class="fw-light mt-2">
+                        The results were very satisfactory. Interestingly, I realized that Bayes Filter acts similarly to the Kalman filtering using a prediciton and sensor data. From the data we can see that the accruacy of the filter relies more on the actual sensor model and not the motion model. 
+                        Conversely, the motion model is actual a very bad prediciton of the motion. It works well in the beginning, but as time goes on the error seems to propogate giving values that are not nearly as conclusive as before. Nonetheless, the update step performs very well and keeps inline
+                        with the ground truth results resulting in a successful Bayes Filter. 
+                    </p>
+                    <p class="fw-light">
+                        The motion model does incorporates a reasonable amount of randomness in reflection of the noise that the robot would likely experience from the enviroment or reality. If we the motion model was cleaned up too much it would deter from accurately representing our setup or scenario.
+                    </p>
+                    <h5 class="fw-bolder mt-2">Logs</h5> <hr style="margin-top: 0;">
+                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 40vh; max-width: 120vh;overflow: auto; border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/ab06deafcd1c1acae742e35aecf3be61.js"></script>                    </div>
+
+                    <h2 class="fw-bolder mt-3">References</h2> <hr style="margin-top: 0;">
+                    <div class="fw-light">
+                        <p>
+                            <span class="fw-medium fst-italic">ChatGPT:</span> Served as valuable resource for programming in C and html. This AI did not serve to be useful for developing logic and algorithim.
+                            Rather it was used for finding function documentation and aquiring knowledge for unknown built-in functions. This was useful when searching for documentation and configuration of the hardware.
+                        </p>
+                        <p>
+                            <span class="fw-medium fst-italic">2024 Student Webpages: </span>Referenced as guides and inspiration in developing my own controller. 
+                            Variety served to be useful as this was an open ended lab. Additionally, it helped troubleshoot by having accounts for similar errors.
+                        </p>
+                        <ul class="ms-2 list-group-flush">
+                            <li class="list-group-item">1. Kaiyuan Xu Webpage</li>
+                            <li class="list-group-item">2. Wenyi Fu</li>
+                        </ul>
+                    </div>
+            </div> 
+
+
+    <!-- Bootstrap core JS-->
+        <script src="js/bootstrap.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+
