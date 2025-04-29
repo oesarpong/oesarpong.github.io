@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fast Robots Student Website</title>
+    <meta name="description" content=" add later" />
+    <meta name="author" content=" Ethan Sarpong" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Responsive Navbar-->
+    <nav class="navbar navbar-expand-lg px-3 bg-dark sticky-top" style=" z-index: 1000; width:100%; height: 3rem;">
+        <a class="navbar-brand text-white"> <p class="h4"> <span class="fw-bold "style = "color:tomato;"> MAE 4190 </span> Fast Robots</p> </a>
+    </nav>
+    <!-- Main Grid Layout -->
+    <div class="container-xs px-3 my-3 ">
+        <div class="row">
+            <!-- Side Column -- About Me + Navigation -->
+            <div class="col-12 col-md-3 text-md-center px-4">
+                <div class="overflow-y-auto container-md bg-white" style= "max-height: 100%;">
+                    <header class ="container d-md-none">  
+                        <a><h1 class="text-capitalize"><span class="fw-bold" style="color:tomato;">Welcome!</span></h1>
+                        <div class="w-100"></div> <h3 class="fw-bold text-dark text-wrap text-justify"> Student Fast Robots Course Webpage</h3></a>
+                    </header>
+                    <!-- About Card-->
+                    <div class="shadow bg-dark-subtle mx-1 rounded">
+                        <div class="card bg-dark py-3 px-3 mx-0 mt-3 align-items-center text-light ">
+                            <img src="assets/profile.jpg" class= "img-fluid d-none d-md-block rounded-circle " alt="..."  style = "width: 75%; height: 75%;">
+                            <img src="assets/profile.jpg" class= "img-fluid d-md-none rounded-circle " alt="..."  style = "width: 50%; height: 50%;">
+                            <h3 class="card-title fw-bolder text-center my-2 px-3"> Ethan Sarpong</h3>
+                            <h6 class="card-title text-center px-3" style="color: rgb(173, 173, 173);"> Mechanical Engineer | eos29</h6>
+                            <ul class="nav nav-underline">
+                                <li class="nav-item justify-content-center">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <button class="btn px-5 btn-outline-light my-1 fw-medium" type="button" onclick="window.location.href='index.html';">
+                                            Homepage
+                                        </button>       
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab1.html';">
+                                            Lab 1: Artemis & Bluetooth
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab2.html';">
+                                            Lab 2: IMU Sensor
+                                        </button> 
+                                        <button class="btn px-4 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab3.html';">
+                                            Lab 3: ToF Sensor
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab4.html';">
+                                            Lab 4: Motors and Open Loop Control
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab5.html';">
+                                            Lab 5: PID Control/Interpolation
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab6.html';">
+                                            Lab 6: Orientation Control
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab7.html';">
+                                            Lab 7: Kalman Filtering
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab8.html';">
+                                            Lab 8: Stunts
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab9.html';">
+                                            Lab 9: Mapping
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab10.html';">
+                                            Lab 10: Grid Localization I
+                                        </button> 
+                                        <button class="btn px-2 my-1 mx-3 btn-outline-light fw-medium" type="button" onclick="window.location.href='lab11.html';">
+                                            Lab 11: Grid Localization II
+                                        </button> 
+                                    </div>
+                                </li>
+                            </ul>
+                            <footer class="pt-1 pb-2 my-3">
+                                <div class="container">
+                                    <h3 class=""><span class="fw-bold" style="color:tomato;">Contact Information<span></h3>
+                                    <p class="fw-medium">Email: <span class="fw-light">eos29@cornell.edu</span></p>
+                                    <p class="fw-medium lh-1">LinkedIn: <small><a class="link-opacity-10-hover" href="https://www.linkedin.com/in/ethan-sarpon/">https://www.linkedin.com/in/ethan-sarpon/</a></small></p>
+                                </div> 
+                            </footer> 
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <!-- Main Column -- Page Content -->
+            <div class="col-12 col-md-9 bg-white overflow-y-scroll px-5 " style="height: 155vh;">
+                <div class="d-flex flex-column ms-2 text-darkt">
+                    <h1 class="text-capitalize fw-bolder mt-3">
+                        <span class="fw-bolder" style="color:tomato; font-size: clamp(2.5rem, 2vw, 2.5rem);">Lab 11: Grid Localization on the Real Robot</span>
+                    </h1>
+                    <h2 class="fw-bolder mt-2">Introduction</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        The purpose of this lab is to implement grid localization using Bayes Filter on the actual robot. Ideally robot should scan the map and report it's observations hence, with the use of Bayes Filter, 
+                        returning an belief of its location which should be close to its ground truth. 
+                    </p>
+                    <h2 class="fw-bolder mt-3">Testing Localization</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        To begin, I tested the algorithim in the simulation, in order to verify that everything is working as expected. Below is a plot showing that everything works. 
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-50" src="assets/lab11/sim.png" alt="...">
+                    </div>
+                    <h2 class="fw-bolder mt-3">Improving Mapping Controller</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        Before completing this lab, I went back to a previous lab and accounted for some of my shortcoming when developing our own maps using 
+                        sensor data. This was very beneficial and resulted in improved on-axis rotation and improved results with added precision. 
+                    </p>
+                    <p class="fw-light">
+                        Please refer to <a href="lab9.html" class="fw-medium fst-italic" style="color:tomato;">Lab 9: Mapping</a> for more details. 
+                    </p>
+                    <h2 class="fw-bolder mt-3">Localization Module Adaptations</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        For this lab we were provided with a fully-functional and optimized Bayes filter implementation that worked for a virtual robot. 
+                        Using the code from the previous lab, we were tasked to added a new object class, <span class="fw-medium">Real Robot</span>, which subsititutes the virtual results 
+                        for real data gained.
+                    </p>
+                    <h5 class="fw-bolder mt-3">Perform Observation Loop</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        The extent of this implementation can be summarized by a the member function 
+                        <span class="fw-medium" style="color: tomato;">perform_observation_loop</span>. Below is the code for this function. 
+                    </p>
+                    <div class="my-4 px-5 mx-5 align-self-center" style="border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/d79053f6901b19d0f42f70fc919bcf3b.js"></script>
+                    </div>
+                    <p class="fw-light mt-3">
+                        This function utilizes two ardunio robot commmands: 
+                        <span class="fw-medium" style="color: tomato;">SEND_IC</span> and
+                        <span class="fw-medium" style="color: tomato;">MAP</span>.
+
+                        In summary, these commands accomplish the 360 degree rotation while reporting results via bluetooth back to my laptop. Below is the code for these commands. 
+                    </p>
+                    <div class="my-4 px-5 mx-5 align-self-center" style="  max-height: 50vh; overflow: auto ;border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/c3265ca6e49f33ac74aa3f2a54ebf7c4.js"></script>
+                    </div>
+                    <h5 class="fw-bolder mt-3">Localizing at Marked Poses</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light mt-3">
+                        After implementing the code, I placed the robot at 4 marked locations and ran the update step of the Bayes Filter once. Below are the indivdiual results with respect to the ground truth.
+                    </p>
+                    <div class="container-fluid row mt-3">
+                        <div class="col-md-6 pe-1">
+                            <div class="row">
+                                <p class="fw-light text-center">Pose: (0 ft ,3 ft ,0 deg)</p>
+                                <div class="d-flex justify-content-center my-3">
+                                    <img class="img-fluid align-self-center" src="assets/lab11/real_0_3.png" alt="...">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <p class="fw-light text-center">Pose: (-3 ft ,-2 ft ,0 deg)</p>
+                                <div class="d-flex justify-content-center my-3">
+                                    <img class="img-fluid align-self-center" src="assets/lab11/real_3_2.png" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ps-1">
+                            <div class="row">
+                                <p class="fw-light text-center">Pose: (5 ft ,3 ft ,0 deg)</p>
+                                <div class="d-flex justify-content-center my-3">
+                                    <img class="img-fluid align-self-center" src="assets/lab11/real_5_3.png" alt="...">
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <p class="fw-light text-center">Pose: (5 ft ,-3 ft ,0 deg)</p>
+                                <div class="d-flex justify-content-center my-3">
+                                    <img class="img-fluid align-self-center" src="assets/lab11/real_5_n3.png" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="fw-bolder mt-3">Discussion</h2> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        In conclusion, the localization using the real robot resulted in sucessful results. At each location the robot was able to provide a reasonable approximation that matched with the ground truth. 
+                        Notably, there were some cases where the ground truth and the belief would overlap. This was not easily repeatable and required a several attempts before getting good data. Therefore, what is reported above is better discribed as the
+                        best attempts made when localizing and could likely be different in a real test.  
+                    </p>
+                    <p class="fw-light">
+                        I would argue that Pose: (5 ft ,-3 ft ,0 deg) was the hardest to localize in comparison to the other marked pose. My hypothesis is that the top two corners 
+                        have a very similar geometry that depending on the noise it can be misinterpreted for the wrong location. To bring all the concepts back together this makes
+                        the considerations made for the previous pose very useful to better the odds of being in respective locations. 
+                    </p>
+
+                    <h5 class="fw-bolder mt-3">Localizing Origin</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        With this in mind, I decided to test the origin as well just to feed my curiosity and verify how well we can localize the starting position. This resulted in probably to most accurate 
+                        out of all my results at the marked poses. This makes sense seeing as the spread of data is the most unique on the map. This will be useful later once include planning.  
+                    </p>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid align-self-center w-75" src="assets/lab11/real_0_0.png" alt="...">
+                    </div>
+                    <h2 class="fw-bolder mt-3">References</h2> <hr style="margin-top: 0;">
+                    <div class="fw-light">
+                        <p>
+                            <span class="fw-medium fst-italic">ChatGPT:</span> Served as valuable resource for programming in C and html. This AI did not serve to be useful for developing logic and algorithim.
+                            Rather it was used for finding function documentation and aquiring knowledge for unknown built-in functions. This was useful when searching for documentation and configuration of the hardware.
+                        </p>
+                        <p>
+                            <span class="fw-medium fst-italic">2024 Student Webpages: </span>Referenced as guides and inspiration in developing my own controller. 
+                            Variety served to be useful as this was an open ended lab. Additionally, it helped troubleshoot by having accounts for similar errors.
+                        </p>
+                        <ul class="ms-2 list-group-flush">
+                            <li class="list-group-item">1. Nila Narayan</li>
+                            <li class="list-group-item">2. Wenyi Fu</li>
+                        </ul>
+                    </div>
+            </div> 
+
+
+    <!-- Bootstrap core JS-->
+        <script src="js/bootstrap.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+
