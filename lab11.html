@@ -137,6 +137,14 @@
                     <div class="my-4 px-5 mx-5 align-self-center" style="  max-height: 50vh; overflow: auto ;border: 1px solid rgb(41, 40, 40); padding: 10px;">
                         <script src="https://gist.github.com/oesarpong/c3265ca6e49f33ac74aa3f2a54ebf7c4.js"></script>
                     </div>
+                    <h5 class="fw-bolder mt-3">Improving Tof Accuracy</h5> <hr style="margin-top: 0;">
+                    <p class="fw-light">
+                        During localization, there is an added priority of having accurate results. Because of this, I increased the timing budget of my ToF Sensors and set the mode to Long in order to return 
+                        better readings of walls. I settled for a timing budget of about 98 ms, yet I hypothesize that this can be further optimized in the future. Looking ahead, this resulted in a significant improvement of my results.
+                    </p>
+                    <div class="my-4 px-5 mx-5 align-self-center" style="max-height: 35vh; overflow:auto ;border: 1px solid rgb(41, 40, 40); padding: 10px;">
+                        <script src="https://gist.github.com/oesarpong/9742a73fcd829167e58e6b1763b31200.js"></script>
+                    </div>
                     <h5 class="fw-bolder mt-3">Localizing at Marked Poses</h5> <hr style="margin-top: 0;">
                     <p class="fw-light mt-3">
                         After implementing the code, I placed the robot at 4 marked locations and ran the update step of the Bayes Filter once. Below are the indivdiual results with respect to the ground truth.
